@@ -28,7 +28,7 @@ const MODULES = [
     title: "People & payroll",
     description:
       "Employee records and payslips generated from real attendance and leave — one directory instead of a folder of spreadsheets.",
-    stat: "5 tools → 1",
+    stat: "Scattered → 1",
     statColor: "text-accent",
   },
   {
@@ -420,7 +420,7 @@ export default function Home() {
             </div>
             <p className="font-display mt-5 text-2xl leading-snug text-ink sm:text-3xl">
               &ldquo;We didn&rsquo;t build this to sell it. We built it
-              because we were tired of five tools that didn&rsquo;t talk to
+              because we were tired of tools that didn&rsquo;t talk to
               each other. We still run our own payroll, invoices, and client
               work on it every day — if it breaks, we&rsquo;re the first to
               know.&rdquo;
@@ -467,7 +467,7 @@ export default function Home() {
                 keep putting off.
               </h2>
               <p className="mx-auto mt-4 max-w-md text-ink-muted">
-                Every week you run on five disconnected tools is a week
+                Every week you run on a pile of disconnected tools is a week
                 you&rsquo;re choosing to make this harder than it needs to
                 be. Let&rsquo;s set it up with your own data and show you
                 what you&rsquo;ve been missing.

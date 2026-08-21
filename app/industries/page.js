@@ -33,7 +33,7 @@ const FITS = [
   {
     icon: <IconPeople />,
     title: "Any services business ready to stop guessing",
-    body: "If your work is quote → deliver → invoice → collect, and you're currently doing that across five tools, Lekka replaces the stitching.",
+    body: "If your work is quote → deliver → invoice → collect, and you're currently doing that across a handful of disconnected tools, Lekka replaces the stitching.",
   },
 ];
 

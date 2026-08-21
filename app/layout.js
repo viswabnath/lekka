@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
+import CustomCursor from "@/components/CustomCursor";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${jakarta.variable} ${plexMono.variable} h-full`}>
       <body className="min-h-full flex flex-col antialiased">
+        <CustomCursor />
         <Header />
         <PageTransition>{children}</PageTransition>
         <Footer />

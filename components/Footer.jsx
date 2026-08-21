@@ -45,8 +45,8 @@ export default function Footer() {
             </span>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-muted">
               One place for payroll, invoices, timesheets, and clients —
-              built for businesses that are done juggling five tools to run
-              one.
+              built for businesses that are done juggling a dozen tools to
+              run one.
             </p>
           </div>
 
