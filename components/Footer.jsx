@@ -23,6 +23,13 @@ const COLUMNS = [
       { href: "/contact", label: "Talk to us" },
     ],
   },
+  {
+    title: "Legal",
+    links: [
+      { href: "/terms", label: "Terms of Service" },
+      { href: "/privacy", label: "Privacy Policy" },
+    ],
+  },
 ];
 
 export default function Footer() {
@@ -31,7 +38,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-line-on-paper bg-paper-2">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid gap-12 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
             <span className="font-display text-2xl font-medium text-ink">
               Lekka
