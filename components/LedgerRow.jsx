@@ -13,7 +13,7 @@ export default function LedgerRow({
 }) {
   return (
     <div className="group grid grid-cols-[auto_1fr_auto] items-start gap-5 border-b border-line-on-paper py-8 transition-colors sm:gap-8">
-      <div className="font-mono-figures pt-1 text-xs tracking-[0.15em] text-accent">
+      <div className="font-mono-figures pt-1 text-xs tracking-[0.15em] text-accent-bright">
         {code}
       </div>
 
@@ -22,9 +22,9 @@ export default function LedgerRow({
           {icon}
         </div>
         <div>
-          <h3 className="font-display text-xl font-medium text-ink sm:text-2xl">
+          <h2 className="font-display text-xl font-medium text-ink sm:text-2xl">
             {title}
-          </h3>
+          </h2>
           <p className="mt-2 max-w-lg text-[15px] leading-relaxed text-ink-muted">
             {description}
           </p>

@@ -75,9 +75,9 @@ export default function IndustriesPage() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-sm border border-line-on-paper text-accent">
                     {f.icon}
                   </div>
-                  <h3 className="font-display mt-5 text-xl font-medium text-ink sm:text-2xl">
+                  <h2 className="font-display mt-5 text-xl font-medium text-ink sm:text-2xl">
                     {f.title}
-                  </h3>
+                  </h2>
                   <p className="mt-3 text-[15px] leading-relaxed text-ink-muted">
                     {f.body}
                   </p>
@@ -105,7 +105,7 @@ export default function IndustriesPage() {
             ].map(([num, title, body], i) => (
               <Reveal key={num} direction={i % 2 === 0 ? "left" : "right"} delay={i * 0.04}>
                 <div className="flex items-start gap-6 border-b border-line-on-paper py-6 last:border-0">
-                  <span className="font-mono-figures text-sm text-accent">{num}</span>
+                  <span className="font-mono-figures text-sm text-accent-bright">{num}</span>
                   <div>
                     <div className="font-display text-xl text-ink">{title}</div>
                     <p className="mt-1 max-w-lg text-sm text-ink-muted">{body}</p>

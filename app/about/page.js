@@ -56,7 +56,7 @@ export default function AboutPage() {
             </Reveal>
             <Reveal direction="left">
               <div>
-                <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-accent">
+                <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-accent-bright">
                   Not a demo account
                 </div>
                 <h2 className="font-display mt-4 text-3xl font-medium leading-tight text-ink sm:text-4xl">

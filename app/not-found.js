@@ -42,7 +42,7 @@ export default function NotFound() {
         <Reveal direction="right" delay={0.16}>
           <p className="mt-10 text-sm text-ink-subtle">
             Or see{" "}
-            <Link href="/product" className="text-accent underline underline-offset-2">
+            <Link href="/product" className="text-accent-bright underline underline-offset-2">
               what&rsquo;s actually inside Lekka
             </Link>
             .

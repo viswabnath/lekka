@@ -142,7 +142,7 @@ export default function ProductPage() {
               <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
                 <Reveal direction={textFirst ? "left" : "right"} className={textFirst ? "" : "lg:order-2"}>
                   <div>
-                    <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-accent">
+                    <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-accent-bright">
                       {s.code} · {s.eyebrow}
                     </div>
                     <h2 className="font-display mt-4 text-3xl font-medium leading-tight text-ink sm:text-4xl">

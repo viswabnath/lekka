@@ -99,10 +99,10 @@ export default function PricingPage() {
                       Most common
                     </span>
                   )}
-                  <h3 className="font-display text-2xl font-medium text-ink">
+                  <h2 className="font-display text-2xl font-medium text-ink">
                     {tier.name}
-                  </h3>
-                  <div className="font-mono-figures mt-2 text-sm text-accent">
+                  </h2>
+                  <div className="font-mono-figures mt-2 text-sm text-accent-bright">
                     {tier.size}
                   </div>
                   <p className="mt-4 text-sm text-ink-muted">{tier.description}</p>
@@ -136,7 +136,7 @@ export default function PricingPage() {
           <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
             <Reveal direction="left">
               <div>
-                <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-accent">
+                <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-accent-bright">
                   Why it works this way
                 </div>
                 <h2 className="font-display mt-4 text-3xl font-medium leading-tight text-ink sm:text-4xl">

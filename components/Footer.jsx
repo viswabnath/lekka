@@ -55,7 +55,7 @@ export default function Footer() {
               className="mt-5 inline-flex items-center gap-2 text-sm text-ink-muted transition-colors hover:text-success-deep"
             >
               <IconWhatsApp className="h-4 w-4 shrink-0" />
-              +91 83319 78532
+              Chat on WhatsApp
             </a>
           </div>
 

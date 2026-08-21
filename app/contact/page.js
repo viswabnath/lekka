@@ -38,7 +38,7 @@ export default function ContactPage() {
             <div className="mt-6 space-y-6">
               {STEPS.map(([num, title, body]) => (
                 <div key={num} className="flex items-start gap-4">
-                  <span className="font-mono-figures text-sm text-accent">{num}</span>
+                  <span className="font-mono-figures text-sm text-accent-bright">{num}</span>
                   <div>
                     <div className="font-medium text-ink">{title}</div>
                     <p className="mt-1 text-sm text-ink-muted">{body}</p>
@@ -59,11 +59,11 @@ export default function ContactPage() {
               className="mt-6 flex items-center justify-center gap-2.5 rounded-sm border border-success/30 bg-success/5 px-6 py-3 text-sm font-medium text-success-deep transition-colors hover:border-success/60 hover:bg-success/10"
             >
               <IconWhatsApp className="h-[18px] w-[18px]" />
-              Chat on WhatsApp — +91 83319 78532
+              Chat on WhatsApp
             </a>
             <p className="mt-6 text-center text-sm text-ink-muted">
               Prefer email? Write to us at{" "}
-              <a href="mailto:hello@onemark.co.in" className="text-accent underline underline-offset-2">
+              <a href="mailto:hello@onemark.co.in" className="text-accent-bright underline underline-offset-2">
                 hello@onemark.co.in
               </a>
             </p>

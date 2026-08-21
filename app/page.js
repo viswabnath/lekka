@@ -30,7 +30,7 @@ const MODULES = [
     description:
       "Employee records and payslips generated from real attendance and leave — one directory instead of a folder of spreadsheets.",
     stat: "Scattered → 1",
-    statColor: "text-accent",
+    statColor: "text-accent-bright",
   },
   {
     code: "FIN",
@@ -48,7 +48,7 @@ const MODULES = [
     description:
       "Top clients, top services, and where the money actually goes — computed automatically, exportable in one click.",
     stat: "Auto-computed",
-    statColor: "text-accent",
+    statColor: "text-accent-bright",
   },
   {
     code: "DOC",
@@ -82,7 +82,7 @@ const MODULES = [
     description:
       "Every client, lead, and follow-up in one place, with the services and history attached — nothing lives in someone's inbox.",
     stat: "One record",
-    statColor: "text-accent",
+    statColor: "text-accent-bright",
   },
   {
     code: "HOL",
@@ -107,7 +107,7 @@ const MODULES = [
     description:
       "Every approval, mention, and reminder lands in one inbox — not scattered across email, chat, and someone's memory.",
     stat: "One inbox",
-    statColor: "text-accent",
+    statColor: "text-accent-bright",
   },
   {
     code: "ARC",
@@ -137,7 +137,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-16 lg:px-10 lg:pb-28 lg:pt-24">
           <div className="grid items-center gap-16 lg:grid-cols-[1fr_1.1fr] lg:gap-10">
             <Reveal direction="left">
-              <span className="font-mono-figures inline-block rounded-sm border border-line-on-paper px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-accent">
+              <span className="font-mono-figures inline-block rounded-sm border border-line-on-paper px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-accent-bright">
                 Now taking early customers
               </span>
               <h1 className="font-display mt-6 text-5xl font-medium leading-[1.05] text-ink sm:text-6xl">
@@ -223,9 +223,9 @@ export default function Home() {
                 },
               ].map((v) => (
                 <div key={v.title}>
-                  <h3 className="font-display text-xl font-medium text-ink">
+                  <h2 className="font-display text-xl font-medium text-ink">
                     {v.title}
-                  </h3>
+                  </h2>
                   <p className="mt-3 text-sm leading-relaxed text-ink-muted">
                     {v.body}
                   </p>

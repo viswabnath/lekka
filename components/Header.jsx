@@ -69,7 +69,7 @@ export default function Header() {
               href={item.href}
               className={`text-sm transition-colors ${
                 pathname === item.href
-                  ? "text-accent"
+                  ? "text-accent-bright"
                   : "text-ink-muted hover:text-ink"
               }`}
             >
