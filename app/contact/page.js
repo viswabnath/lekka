@@ -25,6 +25,12 @@ export default function ContactPage() {
       <section className="bg-paper">
         <div className="mx-auto grid max-w-5xl gap-14 px-6 py-16 lg:grid-cols-[1fr_1.2fr] lg:gap-16 lg:px-10 lg:py-20">
           <Reveal direction="left">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/illustrations/meeting.svg"
+              alt=""
+              className="mb-10 hidden w-full max-w-xs lg:block"
+            />
             <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-ink-subtle">
               What happens next
             </div>

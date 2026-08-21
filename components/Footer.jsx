@@ -1,4 +1,11 @@
 import Link from "next/link";
+import { IconShield } from "@/components/icons";
+
+const TRUST = [
+  "Your own database, your own domain",
+  "Nightly encrypted backups",
+  "Role-based access, enforced at the database",
+];
 
 const COLUMNS = [
   {
@@ -58,6 +65,20 @@ export default function Footer() {
         </div>
 
         <div className="ledger-rule mt-14 text-line-on-paper" />
+
+        <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
+          {TRUST.map((t) => (
+            <span
+              key={t}
+              className="flex items-center gap-2 text-xs text-ink-subtle"
+            >
+              <IconShield className="h-3.5 w-3.5 shrink-0 text-accent" />
+              {t}
+            </span>
+          ))}
+        </div>
+
+        <div className="ledger-rule mt-8 text-line-on-paper" />
 
         <div className="mt-6 flex flex-col gap-3 text-xs text-ink-subtle sm:flex-row sm:items-center sm:justify-between">
           <p>

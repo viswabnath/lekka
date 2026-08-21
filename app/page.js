@@ -98,19 +98,29 @@ export default function Home() {
       {/* The problem, said plainly */}
       <section className="bg-paper-2">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-          <Reveal direction="down">
-            <p className="font-display max-w-3xl text-2xl leading-snug text-ink sm:text-3xl">
-              Right now, your invoices live in one app, timesheets in a
-              spreadsheet, payslips get rebuilt by hand every month, and
-              nobody can say what your real cash position is without adding
-              it up themselves.
-            </p>
-            <p className="mt-6 max-w-xl text-ink-muted">
-              Lekka replaces that with one system your whole team already
-              knows how to use — because it&rsquo;s built the way your
-              business already runs, not the other way around.
-            </p>
-          </Reveal>
+          <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
+            <Reveal direction="down">
+              <p className="font-display max-w-3xl text-2xl leading-snug text-ink sm:text-3xl">
+                Right now, your invoices live in one app, timesheets in a
+                spreadsheet, payslips get rebuilt by hand every month, and
+                nobody can say what your real cash position is without
+                adding it up themselves.
+              </p>
+              <p className="mt-6 max-w-xl text-ink-muted">
+                Lekka replaces that with one system your whole team already
+                knows how to use — because it&rsquo;s built the way your
+                business already runs, not the other way around.
+              </p>
+            </Reveal>
+            <Reveal direction="right" delay={0.08} className="hidden lg:block">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/illustrations/teamwork.svg"
+                alt=""
+                className="mx-auto w-full max-w-sm"
+              />
+            </Reveal>
+          </div>
         </div>
       </section>
 

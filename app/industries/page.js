@@ -48,6 +48,26 @@ export default function IndustriesPage() {
 
       <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
+          <div className="mb-14 grid items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-16">
+            <Reveal direction="left">
+              <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-ink-subtle">
+                Four kinds of businesses, one shape of work
+              </div>
+              <p className="font-display mt-4 max-w-xl text-2xl leading-snug text-ink sm:text-3xl">
+                If your team bills clients for work instead of selling
+                inventory off a shelf, this is who Lekka was actually built
+                for.
+              </p>
+            </Reveal>
+            <Reveal direction="right" delay={0.08} className="hidden lg:block">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/illustrations/growth-analytics.svg"
+                alt=""
+                className="w-64"
+              />
+            </Reveal>
+          </div>
           <Reveal direction="up">
             <div className="grid gap-px overflow-hidden rounded-lg border border-line-on-paper bg-line-on-paper sm:grid-cols-2">
               {FITS.map((f) => (

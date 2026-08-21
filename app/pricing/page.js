@@ -152,6 +152,12 @@ export default function PricingPage() {
               </div>
             </Reveal>
             <Reveal direction="right">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/illustrations/payments.svg"
+                alt=""
+                className="mx-auto mb-10 hidden w-full max-w-xs sm:block"
+              />
               <ul className="space-y-5">
                 {[
                   ["Your own database", "not a shared table with a filter separating you from someone else's business."],
