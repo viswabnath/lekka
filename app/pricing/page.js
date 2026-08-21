@@ -77,7 +77,7 @@ export default function PricingPage() {
     <>
       <PageHero
         eyebrow="Pricing"
-        title="Your own deployment. Your own data. No exceptions."
+        title={<>Your own deployment. Your own data. <span className="text-accent">No exceptions.</span></>}
         subtitle="Lekka isn't a shared database with your data sitting next to a competitor's. Every customer gets their own deployment — so pricing is based on your team's size, not a per-seat meter."
       />
 

@@ -80,6 +80,53 @@ export function IconCheck(props) {
   );
 }
 
+export function IconCalendar(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="24" height="24" {...base} {...props}>
+      <rect x="3.5" y="5" width="17" height="15.5" rx="1.2" />
+      <path d="M3.5 9.5h17M8 3v3.5M16 3v3.5" />
+      <path d="M7.5 13.2h2.2M11.9 13.2h2.2M16.3 13.2h.5M7.5 16.6h2.2M11.9 16.6h2.2" />
+    </svg>
+  );
+}
+
+export function IconBell(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="24" height="24" {...base} {...props}>
+      <path d="M6 10.5a6 6 0 0 1 12 0c0 4 1.4 5.6 2 6.3H4c.6-.7 2-2.3 2-6.3Z" />
+      <path d="M10 19.5a2.2 2.2 0 0 0 4 0" />
+    </svg>
+  );
+}
+
+export function IconMegaphone(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="24" height="24" {...base} {...props}>
+      <path d="M3.5 9.5v5h2.8L15 19V5L6.3 9.5Z" />
+      <path d="M18.5 10a2.8 2.8 0 0 1 0 4" />
+      <path d="M6.3 14.5 7.8 19.5" />
+    </svg>
+  );
+}
+
+export function IconArchiveBox(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="24" height="24" {...base} {...props}>
+      <rect x="3.5" y="4.5" width="17" height="4.5" rx="0.8" />
+      <path d="M4.5 9v9.7a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V9" />
+      <path d="M10 13h4" />
+    </svg>
+  );
+}
+
+export function IconFolder(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="24" height="24" {...base} {...props}>
+      <path d="M3.5 6.5a1 1 0 0 1 1-1H9l2 2.2h8.5a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1Z" />
+    </svg>
+  );
+}
+
 export function IconAnchor(props) {
   return (
     <svg viewBox="0 0 24 24" width="24" height="24" {...base} {...props}>

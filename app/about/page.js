@@ -14,7 +14,7 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About OneMark"
-        title="We built this to run our own business first."
+        title={<>We built this to run <span className="text-accent">our own business</span> first.</>}
         subtitle="Lekka didn't start as a product idea looking for a market. It started as an internal tool we needed — and kept improving until it was too good to keep to ourselves."
       />
 

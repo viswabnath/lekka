@@ -12,6 +12,13 @@ import {
   IconChart,
   IconArrowRight,
   IconAnchor,
+  IconClock,
+  IconCheck,
+  IconCalendar,
+  IconBell,
+  IconMegaphone,
+  IconArchiveBox,
+  IconFolder,
 } from "@/components/icons";
 
 const MODULES = [
@@ -20,16 +27,18 @@ const MODULES = [
     icon: <IconPeople />,
     title: "People & payroll",
     description:
-      "Employee records, payslips, timesheets, PTO, and holidays — one directory instead of a folder of spreadsheets.",
+      "Employee records and payslips generated from real attendance and leave — one directory instead of a folder of spreadsheets.",
     stat: "5 tools → 1",
+    statColor: "text-accent",
   },
   {
     code: "FIN",
     icon: <IconInvoice />,
     title: "Invoices & finance",
     description:
-      "GST and non-GST invoices, quotations, income and expenses, advances, and a live balance across every account.",
+      "GST and non-GST invoices, income and expenses, advances, and a live balance across every payment method.",
     stat: "Live balance",
+    statColor: "text-success",
   },
   {
     code: "RPT",
@@ -38,22 +47,83 @@ const MODULES = [
     description:
       "Top clients, top services, and where the money actually goes — computed automatically, exportable in one click.",
     stat: "Auto-computed",
+    statColor: "text-accent",
+  },
+  {
+    code: "DOC",
+    icon: <IconFolder />,
+    title: "Quotations & documents",
+    description:
+      "A branded, multi-slide proposal deck generated from your service catalog in seconds — not an afternoon in a slide editor.",
+    stat: "9-slide decks",
+  },
+  {
+    code: "OPS",
+    icon: <IconClock />,
+    title: "Timesheets & attendance",
+    description:
+      "Daily entries roll up into monthly views, and missed days get flagged before month-end becomes a scramble.",
+    stat: "Daily entries",
+  },
+  {
+    code: "APR",
+    icon: <IconCheck />,
+    title: "Approvals",
+    description:
+      "Every pending timesheet in one global queue for managers — self-approval blocked at the database, not just hidden in the UI.",
+    stat: "One queue",
+    statColor: "text-success",
   },
   {
     code: "CRM",
     icon: <IconClients />,
-    title: "Clients & leads",
+    title: "Clients, leads & follow-ups",
     description:
       "Every client, lead, and follow-up in one place, with the services and history attached — nothing lives in someone's inbox.",
     stat: "One record",
+    statColor: "text-accent",
+  },
+  {
+    code: "HOL",
+    icon: <IconCalendar />,
+    title: "Holiday & PTO",
+    description:
+      "A company holiday calendar and per-employee leave policy, with balances tracked automatically instead of chased over chat.",
+    stat: "Auto-tracked",
+  },
+  {
+    code: "ANN",
+    icon: <IconMegaphone />,
+    title: "Team feed & announcements",
+    description:
+      "Birthdays, work anniversaries, and team announcements posted automatically — deduplicated, so nobody spams the feed by accident.",
+    stat: "Deduplicated",
+  },
+  {
+    code: "NOT",
+    icon: <IconBell />,
+    title: "Notifications",
+    description:
+      "Every approval, mention, and reminder lands in one inbox — not scattered across email, chat, and someone's memory.",
+    stat: "One inbox",
+    statColor: "text-accent",
+  },
+  {
+    code: "ARC",
+    icon: <IconArchiveBox />,
+    title: "Document archive",
+    description:
+      "Every quotation, invoice, and payslip ever generated — saved and searchable, never lost in someone's downloads folder.",
+    stat: "Fully searchable",
   },
   {
     code: "SEC",
     icon: <IconShield />,
-    title: "Access & records",
+    title: "Access, audit & backups",
     description:
-      "Who can see what is enforced by role, every change is logged, and your data is backed up automatically, every night.",
+      "Who can see what is enforced by role, every change is logged permanently, and your data is backed up automatically, every night.",
     stat: "Nightly backups",
+    statColor: "text-danger",
   },
 ];
 
@@ -71,7 +141,7 @@ export default function Home() {
               <h1 className="font-display mt-6 text-5xl font-medium leading-[1.05] text-ink sm:text-6xl">
                 One ledger for
                 <br />
-                your whole business.
+                your <span className="text-accent">whole</span> business.
               </h1>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink-muted">
                 Most businesses don&rsquo;t fail from one bad decision — they
@@ -162,7 +232,8 @@ export default function Home() {
             </div>
             <p className="font-display mt-14 max-w-2xl text-2xl leading-snug text-ink sm:text-3xl">
               You don&rsquo;t need more software. You need one place where
-              nothing about your business can quietly hide.
+              nothing about your business can{" "}
+              <span className="text-danger">quietly hide</span>.
             </p>
           </Reveal>
         </div>
@@ -173,7 +244,7 @@ export default function Home() {
         <div className="mx-auto max-w-4xl px-6 pb-20 lg:px-10 lg:pb-28">
           <Reveal>
             <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-ink-subtle">
-              What&rsquo;s inside
+              What&rsquo;s inside — {MODULES.length} tools, one login
             </div>
             <div className="mt-4">
               {MODULES.map((m) => (
@@ -391,8 +462,9 @@ export default function Home() {
           <Reveal>
             <div className="rounded-lg border border-accent/25 bg-paper px-8 py-16 text-center sm:px-16">
               <h2 className="font-display text-3xl font-medium text-ink sm:text-4xl">
-                The one system your business can&rsquo;t afford to keep
-                putting off.
+                The one system your business{" "}
+                <span className="text-danger">can&rsquo;t afford</span> to
+                keep putting off.
               </h2>
               <p className="mx-auto mt-4 max-w-md text-ink-muted">
                 Every week you run on five disconnected tools is a week

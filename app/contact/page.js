@@ -18,7 +18,7 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Book a demo"
-        title="Let's set it up with your own data."
+        title={<>Let&rsquo;s set it up with <span className="text-accent">your own data.</span></>}
         subtitle="No generic demo account walkthrough — tell us about your business, and we'll show you Lekka running the way it would for you."
       />
 

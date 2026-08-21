@@ -130,7 +130,7 @@ export default function ProductPage() {
     <>
       <PageHero
         eyebrow="Product"
-        title="Everything your business runs on, in one place."
+        title={<>Everything your business runs on, <span className="text-accent">in one place.</span></>}
         subtitle="Not a bundle of separate apps wearing one logo — one system, built so each part already knows about the others."
       />
 

@@ -42,7 +42,7 @@ export default function IndustriesPage() {
     <>
       <PageHero
         eyebrow="Who it's for"
-        title="Built for businesses that bill for their work — not for shelves."
+        title={<>Built for businesses that <span className="text-accent">bill for their work</span> — not for shelves.</>}
         subtitle="Lekka fits the shape of a project- and retainer-based services business. It's not accounting software, not an inventory system, and not built for a product company."
       />
 
