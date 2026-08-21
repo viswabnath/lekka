@@ -1,6 +1,7 @@
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
+import { IconWhatsApp } from "@/components/icons";
 
 export const metadata = {
   title: "Contact — Lekka",
@@ -51,7 +52,16 @@ export default function ContactPage() {
             <div className="rounded-lg border border-line-on-paper bg-paper-2/60 p-8 sm:p-10">
               <ContactForm />
             </div>
-            <p className="mt-8 text-center text-sm text-ink-muted">
+            <a
+              href="https://wa.me/918331978532?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Lekka"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 flex items-center justify-center gap-2.5 rounded-sm border border-success/30 bg-success/5 px-6 py-3 text-sm font-medium text-success-deep transition-colors hover:border-success/60 hover:bg-success/10"
+            >
+              <IconWhatsApp className="h-[18px] w-[18px]" />
+              Chat on WhatsApp — +91 83319 78532
+            </a>
+            <p className="mt-6 text-center text-sm text-ink-muted">
               Prefer email? Write to us at{" "}
               <a href="mailto:hello@onemark.co.in" className="text-accent underline underline-offset-2">
                 hello@onemark.co.in

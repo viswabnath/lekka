@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import LedgerRow from "@/components/LedgerRow";
 import ScreenshotImage from "@/components/ScreenshotImage";
 import ProductShowcase from "@/components/hero/ProductShowcase";
+import BackgroundDoodle from "@/components/BackgroundDoodle";
 import {
   IconPeople,
   IconInvoice,
@@ -131,8 +132,9 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-paper">
-        <div className="mx-auto max-w-7xl px-6 pb-20 pt-16 lg:px-10 lg:pb-28 lg:pt-24">
+      <section className="relative isolate overflow-hidden bg-paper">
+        <BackgroundDoodle />
+        <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-16 lg:px-10 lg:pb-28 lg:pt-24">
           <div className="grid items-center gap-16 lg:grid-cols-[1fr_1.1fr] lg:gap-10">
             <Reveal direction="left">
               <span className="font-mono-figures inline-block rounded-sm border border-line-on-paper px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-accent">
@@ -460,8 +462,9 @@ export default function Home() {
       <section className="bg-paper-2">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
           <Reveal>
-            <div className="rounded-lg border border-accent/25 bg-paper px-8 py-16 text-center sm:px-16">
-              <h2 className="font-display text-3xl font-medium text-ink sm:text-4xl">
+            <div className="relative isolate overflow-hidden rounded-lg border border-accent/25 bg-paper px-8 py-16 text-center sm:px-16">
+              <BackgroundDoodle className="rounded-lg" />
+              <h2 className="relative font-display text-3xl font-medium text-ink sm:text-4xl">
                 The one system your business{" "}
                 <span className="text-danger">can&rsquo;t afford</span> to
                 keep putting off.

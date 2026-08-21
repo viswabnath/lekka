@@ -1,9 +1,11 @@
 import Reveal from "./Reveal";
+import BackgroundDoodle from "./BackgroundDoodle";
 
 export default function PageHero({ eyebrow, title, subtitle }) {
   return (
-    <section className="border-b border-line-on-paper bg-paper-2">
-      <div className="mx-auto max-w-4xl px-6 py-20 lg:px-10 lg:py-28">
+    <section className="relative isolate overflow-hidden border-b border-line-on-paper bg-paper-2">
+      <BackgroundDoodle />
+      <div className="relative mx-auto max-w-4xl px-6 py-20 lg:px-10 lg:py-28">
         <Reveal direction="down">
           <span className="font-mono-figures text-xs uppercase tracking-[0.18em] text-accent">
             {eyebrow}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { IconShield } from "@/components/icons";
+import { IconShield, IconWhatsApp } from "@/components/icons";
 
 const TRUST = [
   "Your own database, your own domain",
@@ -48,6 +48,15 @@ export default function Footer() {
               built for businesses that are done juggling a dozen tools to
               run one.
             </p>
+            <a
+              href="https://wa.me/918331978532"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 text-sm text-ink-muted transition-colors hover:text-success-deep"
+            >
+              <IconWhatsApp className="h-4 w-4 shrink-0" />
+              +91 83319 78532
+            </a>
           </div>
 
           {COLUMNS.map((col) => (
