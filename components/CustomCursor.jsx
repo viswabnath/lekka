@@ -46,7 +46,7 @@ export default function CustomCursor() {
     const onOver = (e) => {
       const target = e.target;
       if (!(target instanceof Element)) return;
-      if (target.closest("input, textarea, select")) {
+      if (target.closest("input, textarea, select, .screenshot-lens")) {
         setMode("hide");
       } else if (target.closest('a, button, [role="button"], .cursor-interactive')) {
         setMode("interactive");
