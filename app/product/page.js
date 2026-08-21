@@ -25,6 +25,20 @@ const SECTIONS = [
     screenshotAlt: "Client statement showing billed, paid, and outstanding totals in Lekka",
   },
   {
+    code: "RPT",
+    eyebrow: "Reports & insights",
+    title: "Know your top clients and biggest costs without building a spreadsheet.",
+    body: "Revenue by service, revenue by client, your five biggest expense categories — computed automatically from records you already have, not a report someone has to remember to build.",
+    points: [
+      "Top clients and top services, ranked by revenue",
+      "Where the money actually goes, by expense category",
+      "Financial year, quarterly, and month-on-month breakdowns",
+      "Export to CSV or PDF for your accountant, in one click",
+    ],
+    screenshot: "/screenshots/reports.jpg",
+    screenshotAlt: "Financial reports showing income, expenses, top clients, and revenue breakdown by service and client",
+  },
+  {
     code: "DOC",
     eyebrow: "Invoices, quotations & receipts",
     title: "Client-facing documents that look like you hired a design team.",
@@ -48,6 +62,7 @@ const SECTIONS = [
       "Payslips generated from real attendance and leave data",
       "Every employee sees their own history — no admin bottleneck",
       "PTO and holiday calendar, with approvals built in",
+      "A team feed that marks birthdays and work anniversaries automatically",
     ],
     screenshot: "/screenshots/employees.jpg",
     screenshotAlt: "Employee directory showing active team members, roles, and departments",

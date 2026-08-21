@@ -9,6 +9,7 @@ import {
   IconInvoice,
   IconClients,
   IconShield,
+  IconChart,
   IconArrowRight,
   IconAnchor,
 } from "@/components/icons";
@@ -29,6 +30,14 @@ const MODULES = [
     description:
       "GST and non-GST invoices, quotations, income and expenses, advances, and a live balance across every account.",
     stat: "Live balance",
+  },
+  {
+    code: "RPT",
+    icon: <IconChart />,
+    title: "Reports & insights",
+    description:
+      "Top clients, top services, and where the money actually goes — computed automatically, exportable in one click.",
+    stat: "Auto-computed",
   },
   {
     code: "CRM",
@@ -190,6 +199,29 @@ export default function Home() {
             </Reveal>
             <Reveal direction="right">
               <ScreenshotImage src="/screenshots/invoice.jpg" alt="GST tax invoice generated in Lekka, with line items and bank details" />
+            </Reveal>
+          </div>
+
+          <div className="mt-24 grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
+            <Reveal direction="left" className="order-2 lg:order-1">
+              <ScreenshotImage src="/screenshots/reports.jpg" alt="Financial reports showing top clients, top services, and revenue breakdown" />
+            </Reveal>
+            <Reveal direction="right" className="order-1 lg:order-2">
+              <div>
+                <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-danger">
+                  Reports without the spreadsheet
+                </div>
+                <h2 className="font-display mt-4 text-3xl font-medium leading-tight text-ink sm:text-4xl">
+                  Know your top clients
+                  <br />
+                  without building a report.
+                </h2>
+                <p className="mt-5 max-w-md text-ink-muted">
+                  Revenue by client, revenue by service, your biggest expense
+                  categories — computed automatically from records you
+                  already have, exportable in one click.
+                </p>
+              </div>
             </Reveal>
           </div>
         </div>
