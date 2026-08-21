@@ -68,8 +68,37 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* Honest about fit */}
+      {/* The actual loop */}
       <section className="bg-paper-2">
+        <div className="mx-auto max-w-4xl px-6 py-20 lg:px-10 lg:py-24">
+          <Reveal direction="left">
+            <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-ink-subtle">
+              The loop every one of these businesses runs on
+            </div>
+          </Reveal>
+          <div className="mt-8 space-y-0">
+            {[
+              ["01", "Quote", "A branded, multi-slide proposal in minutes, not an afternoon in a slide deck."],
+              ["02", "Deliver", "Timesheets and client records track the work as it happens — nothing reconstructed later."],
+              ["03", "Invoice", "GST-compliant, sequential, tied to the client record — never a duplicate number."],
+              ["04", "Collect", "Advances and payments reconciled automatically. Outstanding balances never a guess."],
+            ].map(([num, title, body], i) => (
+              <Reveal key={num} direction={i % 2 === 0 ? "left" : "right"} delay={i * 0.04}>
+                <div className="flex items-start gap-6 border-b border-line-on-paper py-6 last:border-0">
+                  <span className="font-mono-figures text-sm text-accent">{num}</span>
+                  <div>
+                    <div className="font-display text-xl text-ink">{title}</div>
+                    <p className="mt-1 max-w-lg text-sm text-ink-muted">{body}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Honest about fit */}
+      <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-6 py-20 text-center lg:px-10 lg:py-24">
           <Reveal direction="down">
             <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-danger">
@@ -88,10 +117,10 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      <section className="bg-paper">
+      <section className="bg-paper-2">
         <div className="mx-auto max-w-7xl px-6 py-24 text-center lg:px-10 lg:py-28">
           <Reveal>
-            <div className="rounded-lg border border-accent/25 bg-paper-2 px-8 py-16 sm:px-16">
+            <div className="rounded-lg border border-accent/25 bg-paper px-8 py-16 sm:px-16">
               <h2 className="font-display text-3xl font-medium text-ink sm:text-4xl">
                 Sounds like your business?
               </h2>

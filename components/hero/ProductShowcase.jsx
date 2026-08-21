@@ -41,8 +41,8 @@ export default function ProductShowcase() {
         className="absolute -bottom-6 -left-6 w-[78%] overflow-hidden rounded-lg border border-line-on-paper shadow-[0_30px_60px_-25px_rgba(94,106,210,0.25)] sm:-bottom-10 sm:-left-10"
       >
         <Image
-          src="/screenshots/timesheet.jpg"
-          alt="Timesheet dashboard in Lekka"
+          src="/screenshots/finance.jpg"
+          alt="Client statement in Lekka showing billed, paid, and outstanding totals"
           width={1457}
           height={843}
           className="h-auto w-full"
@@ -54,8 +54,8 @@ export default function ProductShowcase() {
         className="relative ml-[18%] overflow-hidden rounded-lg border border-line-on-paper shadow-[0_40px_80px_-30px_rgba(94,106,210,0.35)] sm:ml-[22%]"
       >
         <Image
-          src="/screenshots/finance.jpg"
-          alt="Client statement in Lekka showing billed, paid, and outstanding totals"
+          src="/screenshots/dashboard.jpg"
+          alt="Lekka dashboard showing live balance, tools, and the team activity feed"
           width={1457}
           height={843}
           className="h-auto w-full"

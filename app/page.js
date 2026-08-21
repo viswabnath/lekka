@@ -227,8 +227,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust strip */}
+      {/* Real numbers */}
       <section className="bg-paper-2">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
+          <Reveal>
+            <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-ink-subtle">
+              Not projections — what&rsquo;s actually running on it today
+            </div>
+            <div className="ledger-rule mt-6 text-line-on-paper" />
+            <div className="mt-10 grid grid-cols-2 gap-8 sm:grid-cols-4">
+              {[
+                ["140+", "clients & leads tracked"],
+                ["700+", "expense records logged"],
+                ["250+", "income entries reconciled"],
+                ["12", "tools behind one login"],
+              ].map(([big, small]) => (
+                <div key={big}>
+                  <div className="font-mono-figures text-3xl font-medium text-ink sm:text-4xl">
+                    {big}
+                  </div>
+                  <div className="mt-2 text-sm text-ink-muted">{small}</div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 max-w-xl text-sm text-ink-muted">
+              These are OneMark&rsquo;s own numbers, from running our own
+              agency on Lekka every day — not a demo account, not a sales
+              projection.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Trust strip */}
+      <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
           <Reveal>
             <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-ink-subtle">
@@ -250,6 +282,27 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Founder's note — an honest stand-in for testimonials we don't have yet */}
+      <section className="bg-paper-2">
+        <div className="mx-auto max-w-3xl px-6 py-20 lg:px-10 lg:py-24">
+          <Reveal direction="down">
+            <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-ink-subtle">
+              From the team that built it
+            </div>
+            <p className="font-display mt-5 text-2xl leading-snug text-ink sm:text-3xl">
+              &ldquo;We didn&rsquo;t build this to sell it. We built it
+              because we were tired of five tools that didn&rsquo;t talk to
+              each other. We still run our own payroll, invoices, and client
+              work on it every day — if it breaks, we&rsquo;re the first to
+              know.&rdquo;
+            </p>
+            <p className="mt-4 text-sm text-ink-muted">
+              — OneMark, Kakinada
+            </p>
           </Reveal>
         </div>
       </section>

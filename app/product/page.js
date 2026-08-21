@@ -82,6 +82,20 @@ const SECTIONS = [
     screenshotAlt: "Attendance dashboard showing monthly heatmap and yearly productivity trend",
   },
   {
+    code: "APR",
+    eyebrow: "Approvals",
+    title: "One queue for every manager, not one inbox each.",
+    body: "Every pending timesheet in a single global queue — who submitted it, how many hours, how much PTO — with approve or reject one click away. A manager can't approve their own.",
+    points: [
+      "Global approval queue across the whole team",
+      "Pending, approved, and rejected — all in one view",
+      "Self-approval blocked at the database, not just hidden in the UI",
+      "Rejections require a real reason, not a blank click",
+    ],
+    screenshot: "/screenshots/timesheet-approval.jpg",
+    screenshotAlt: "Global timesheet approval queue showing pending, approved, and rejected submissions",
+  },
+  {
     code: "CRM",
     eyebrow: "Clients, leads & follow-ups",
     title: "Nothing about a client lives in someone's inbox.",
@@ -153,6 +167,47 @@ export default function ProductPage() {
           </section>
         );
       })}
+
+      {/* More, in one place */}
+      <section className="bg-paper-2">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
+          <Reveal>
+            <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-ink-subtle">
+              And there&rsquo;s more inside
+            </div>
+            <p className="mt-3 max-w-xl text-ink-muted">
+              A command-center dashboard, a self-serve payslip archive, and
+              every generated document saved and searchable — the parts of
+              running a business that don&rsquo;t need a whole section to
+              make the point.
+            </p>
+            <div className="mt-10 grid gap-6 sm:grid-cols-3">
+              {[
+                {
+                  src: "/screenshots/dashboard.jpg",
+                  alt: "Lekka dashboard with live balance, tools, and team activity feed",
+                  label: "Dashboard — everything at a glance",
+                },
+                {
+                  src: "/screenshots/my-payslips.jpg",
+                  alt: "Employee self-service payslip download screen",
+                  label: "Self-serve payslip archive",
+                },
+                {
+                  src: "/screenshots/archive.jpg",
+                  alt: "Document archive listing saved quotations, invoices, and receipts",
+                  label: "Every document, saved and searchable",
+                },
+              ].map((item) => (
+                <div key={item.src}>
+                  <ScreenshotImage src={item.src} alt={item.alt} />
+                  <p className="mt-3 text-sm text-ink-muted">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-6 py-24 text-center lg:px-10 lg:py-28">

@@ -1,6 +1,7 @@
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
+import ScreenshotImage from "@/components/ScreenshotImage";
 import { IconAnchor, IconArrowRight } from "@/components/icons";
 
 export const metadata = {
@@ -46,7 +47,34 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* This is literally our own dashboard */}
       <section className="bg-paper-2">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
+          <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
+            <Reveal direction="right">
+              <ScreenshotImage src="/screenshots/dashboard.jpg" alt="OneMark's own live Lekka dashboard" />
+            </Reveal>
+            <Reveal direction="left">
+              <div>
+                <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-accent">
+                  Not a demo account
+                </div>
+                <h2 className="font-display mt-4 text-3xl font-medium leading-tight text-ink sm:text-4xl">
+                  This is the dashboard we actually look at.
+                </h2>
+                <p className="mt-5 max-w-md text-ink-muted">
+                  140+ clients and leads, 700+ expense records, 250+ income
+                  entries reconciled — that&rsquo;s our own agency&rsquo;s
+                  data, not a seed script written to look impressive for a
+                  screenshot.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
           <Reveal direction="right">
             <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-ink-subtle">
@@ -81,7 +109,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-paper">
+      <section className="bg-paper-2">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
           <Reveal>
             <div className="flex flex-col items-center gap-4 text-center">
