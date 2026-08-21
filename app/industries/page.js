@@ -48,7 +48,7 @@ export default function IndustriesPage() {
 
       <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
-          <Reveal>
+          <Reveal direction="up">
             <div className="grid gap-px overflow-hidden rounded-lg border border-line-on-paper bg-line-on-paper sm:grid-cols-2">
               {FITS.map((f) => (
                 <div key={f.title} className="h-full bg-paper p-8 lg:p-10">
@@ -71,7 +71,7 @@ export default function IndustriesPage() {
       {/* Honest about fit */}
       <section className="bg-paper-2">
         <div className="mx-auto max-w-3xl px-6 py-20 text-center lg:px-10 lg:py-24">
-          <Reveal>
+          <Reveal direction="down">
             <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-danger">
               Being straight with you
             </div>
@@ -88,16 +88,18 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      <section className="bg-canvas">
+      <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-6 py-24 text-center lg:px-10 lg:py-28">
           <Reveal>
-            <h2 className="font-display text-3xl font-medium text-cream sm:text-4xl">
-              Sounds like your business?
-            </h2>
-            <div className="mt-8 flex justify-center">
-              <Button href="/contact" variant="accent">
-                Book a demo <IconArrowRight />
-              </Button>
+            <div className="rounded-lg border border-accent/25 bg-paper-2 px-8 py-16 sm:px-16">
+              <h2 className="font-display text-3xl font-medium text-ink sm:text-4xl">
+                Sounds like your business?
+              </h2>
+              <div className="mt-8 flex justify-center">
+                <Button href="/contact" variant="accent">
+                  Book a demo <IconArrowRight />
+                </Button>
+              </div>
             </div>
           </Reveal>
         </div>

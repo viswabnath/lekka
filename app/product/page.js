@@ -105,47 +105,52 @@ export default function ProductPage() {
         subtitle="Not a bundle of separate apps wearing one logo — one system, built so each part already knows about the others."
       />
 
-      {SECTIONS.map((s, i) => (
-        <section key={s.code} className={i % 2 === 0 ? "bg-paper" : "bg-paper-2"}>
-          <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-            <Reveal>
+      {SECTIONS.map((s, i) => {
+        const textFirst = i % 2 === 0;
+        return (
+          <section key={s.code} className={textFirst ? "bg-paper" : "bg-paper-2"}>
+            <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
               <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
-                <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-                  <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-accent">
-                    {s.code} · {s.eyebrow}
+                <Reveal direction={textFirst ? "left" : "right"} className={textFirst ? "" : "lg:order-2"}>
+                  <div>
+                    <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-accent">
+                      {s.code} · {s.eyebrow}
+                    </div>
+                    <h2 className="font-display mt-4 text-3xl font-medium leading-tight text-ink sm:text-4xl">
+                      {s.title}
+                    </h2>
+                    <p className="mt-5 max-w-md text-ink-muted">{s.body}</p>
+                    <ul className="mt-7 space-y-3">
+                      {s.points.map((p) => (
+                        <li key={p} className="flex items-start gap-3 text-sm text-ink/90">
+                          <IconCheck className="mt-0.5 shrink-0 text-success" />
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <h2 className="font-display mt-4 text-3xl font-medium leading-tight text-ink sm:text-4xl">
-                    {s.title}
-                  </h2>
-                  <p className="mt-5 max-w-md text-ink-muted">{s.body}</p>
-                  <ul className="mt-7 space-y-3">
-                    {s.points.map((p) => (
-                      <li key={p} className="flex items-start gap-3 text-sm text-ink/90">
-                        <IconCheck className="mt-0.5 shrink-0 text-success" />
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={i % 2 === 1 ? "lg:order-1" : ""}>
+                </Reveal>
+                <Reveal direction={textFirst ? "right" : "left"} className={textFirst ? "" : "lg:order-1"}>
                   <ScreenshotImage src={s.screenshot} alt={s.screenshotAlt} />
-                </div>
+                </Reveal>
               </div>
-            </Reveal>
-          </div>
-        </section>
-      ))}
+            </div>
+          </section>
+        );
+      })}
 
-      <section className="bg-canvas">
+      <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-6 py-24 text-center lg:px-10 lg:py-28">
           <Reveal>
-            <h2 className="font-display text-3xl font-medium text-cream sm:text-4xl">
-              See it running with your own data.
-            </h2>
-            <div className="mt-8 flex justify-center">
-              <Button href="/contact" variant="accent">
-                Book a demo <IconArrowRight />
-              </Button>
+            <div className="rounded-lg border border-accent/25 bg-paper-2 px-8 py-16 sm:px-16">
+              <h2 className="font-display text-3xl font-medium text-ink sm:text-4xl">
+                See it running with your own data.
+              </h2>
+              <div className="mt-8 flex justify-center">
+                <Button href="/contact" variant="accent">
+                  Book a demo <IconArrowRight />
+                </Button>
+              </div>
             </div>
           </Reveal>
         </div>

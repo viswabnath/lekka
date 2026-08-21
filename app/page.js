@@ -3,6 +3,7 @@ import Button from "@/components/Button";
 import Reveal from "@/components/Reveal";
 import LedgerRow from "@/components/LedgerRow";
 import ScreenshotImage from "@/components/ScreenshotImage";
+import ProductShowcase from "@/components/hero/ProductShowcase";
 import {
   IconPeople,
   IconInvoice,
@@ -11,7 +12,6 @@ import {
   IconArrowRight,
   IconAnchor,
 } from "@/components/icons";
-import LedgerHeroLoader from "@/components/hero/LedgerHeroLoader";
 
 const MODULES = [
   {
@@ -51,23 +51,20 @@ const MODULES = [
 export default function Home() {
   return (
     <>
-      {/* Hero — the one dark signature moment */}
-      <section className="relative overflow-hidden bg-canvas">
-        <LedgerHeroLoader />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-canvas/40 via-transparent to-canvas" />
-
-        <div className="relative mx-auto max-w-7xl px-6 pb-28 pt-24 lg:px-10 lg:pb-40 lg:pt-32">
-          <div className="max-w-2xl">
-            <Reveal>
-              <span className="font-mono-figures inline-block rounded-sm border border-line-on-canvas px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-accent">
+      {/* Hero */}
+      <section className="bg-paper">
+        <div className="mx-auto max-w-7xl px-6 pb-20 pt-16 lg:px-10 lg:pb-28 lg:pt-24">
+          <div className="grid items-center gap-16 lg:grid-cols-[1fr_1.1fr] lg:gap-10">
+            <Reveal direction="left">
+              <span className="font-mono-figures inline-block rounded-sm border border-line-on-paper px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-accent">
                 Now taking early customers
               </span>
-              <h1 className="font-display mt-6 text-5xl font-medium leading-[1.05] text-cream sm:text-6xl lg:text-7xl">
+              <h1 className="font-display mt-6 text-5xl font-medium leading-[1.05] text-ink sm:text-6xl">
                 One ledger for
                 <br />
                 your whole business.
               </h1>
-              <p className="mt-6 max-w-lg text-lg leading-relaxed text-cream-muted">
+              <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink-muted">
                 Lekka brings your payroll, invoices, timesheets, and clients
                 into one place — so you stop stitching five disconnected
                 tools together every week.
@@ -77,19 +74,22 @@ export default function Home() {
                   Book a demo
                   <IconArrowRight />
                 </Button>
-                <Button href="/product" variant="outlineDark">
+                <Button href="/product" variant="outlineLight">
                   See what&rsquo;s inside
                 </Button>
               </div>
+            </Reveal>
+            <Reveal direction="right" delay={0.1}>
+              <ProductShowcase />
             </Reveal>
           </div>
         </div>
       </section>
 
       {/* The problem, said plainly */}
-      <section className="bg-paper">
+      <section className="bg-paper-2">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-          <Reveal>
+          <Reveal direction="down">
             <p className="font-display max-w-3xl text-2xl leading-snug text-ink sm:text-3xl">
               Right now, your invoices live in one app, timesheets in a
               spreadsheet, payslips get rebuilt by hand every month, and
@@ -106,7 +106,7 @@ export default function Home() {
       </section>
 
       {/* Module ledger */}
-      <section className="bg-paper">
+      <section className="bg-paper-2">
         <div className="mx-auto max-w-4xl px-6 pb-20 lg:px-10 lg:pb-28">
           <Reveal>
             <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-ink-subtle">
@@ -122,10 +122,10 @@ export default function Home() {
       </section>
 
       {/* Screenshots */}
-      <section className="bg-paper-2 py-20 lg:py-28">
+      <section className="bg-paper py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <Reveal>
-            <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
+          <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
+            <Reveal direction="left">
               <div>
                 <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-danger">
                   Finance, at a glance
@@ -141,14 +141,18 @@ export default function Home() {
                   number in your account.
                 </p>
               </div>
+            </Reveal>
+            <Reveal direction="right">
               <ScreenshotImage src="/screenshots/finance.jpg" alt="Client statement showing billed, paid, and outstanding totals in Lekka" />
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
 
-          <Reveal>
-            <div className="mt-24 grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
-              <ScreenshotImage src="/screenshots/timesheet.jpg" alt="Timesheet dashboard showing monthly attendance heatmap and productivity trend" className="order-2 lg:order-1" />
-              <div className="order-1 lg:order-2">
+          <div className="mt-24 grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
+            <Reveal direction="left" className="order-2 lg:order-1">
+              <ScreenshotImage src="/screenshots/timesheet.jpg" alt="Timesheet dashboard showing monthly attendance heatmap and productivity trend" />
+            </Reveal>
+            <Reveal direction="right" className="order-1 lg:order-2">
+              <div>
                 <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-danger">
                   Attendance, without the spreadsheet
                 </div>
@@ -163,11 +167,11 @@ export default function Home() {
                   &ldquo;let me check.&rdquo;
                 </p>
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
 
-          <Reveal>
-            <div className="mt-24 grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
+          <div className="mt-24 grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
+            <Reveal direction="left">
               <div>
                 <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-danger">
                   Documents that look designed
@@ -183,14 +187,16 @@ export default function Home() {
                   your service catalog in seconds.
                 </p>
               </div>
+            </Reveal>
+            <Reveal direction="right">
               <ScreenshotImage src="/screenshots/invoice.jpg" alt="GST tax invoice generated in Lekka, with line items and bank details" />
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </div>
       </section>
 
       {/* Trust strip */}
-      <section className="bg-paper">
+      <section className="bg-paper-2">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
           <Reveal>
             <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-ink-subtle">
@@ -217,9 +223,9 @@ export default function Home() {
       </section>
 
       {/* Origin line */}
-      <section className="bg-paper-2">
+      <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
-          <Reveal>
+          <Reveal direction="left">
             <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-4">
                 <IconAnchor className="text-accent" />
@@ -240,15 +246,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA band — the closing dark bookend */}
-      <section className="bg-canvas">
+      {/* CTA band */}
+      <section className="bg-paper-2">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
           <Reveal>
-            <div className="rounded-lg border border-line-on-canvas bg-canvas-2 px-8 py-16 text-center sm:px-16">
-              <h2 className="font-display text-3xl font-medium text-cream sm:text-4xl">
+            <div className="rounded-lg border border-accent/25 bg-paper px-8 py-16 text-center sm:px-16">
+              <h2 className="font-display text-3xl font-medium text-ink sm:text-4xl">
                 See Lekka running your business.
               </h2>
-              <p className="mx-auto mt-4 max-w-md text-cream-muted">
+              <p className="mx-auto mt-4 max-w-md text-ink-muted">
                 We&rsquo;ll set it up with your own data and walk you
                 through it — no generic demo account.
               </p>

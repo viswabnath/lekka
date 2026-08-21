@@ -19,7 +19,7 @@ export default function AboutPage() {
 
       <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-6 py-20 lg:px-10 lg:py-24">
-          <Reveal>
+          <Reveal direction="left">
             <p className="text-lg leading-relaxed text-ink-muted">
               OneMark is based in <span className="text-ink">Kakinada</span>,
               on the coast of Andhra Pradesh — a working port city that has
@@ -48,7 +48,7 @@ export default function AboutPage() {
 
       <section className="bg-paper-2">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
-          <Reveal>
+          <Reveal direction="right">
             <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-ink-subtle">
               What we hold ourselves to
             </div>
@@ -81,12 +81,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-canvas">
+      <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
           <Reveal>
             <div className="flex flex-col items-center gap-4 text-center">
               <IconAnchor className="h-8 w-8 text-accent" />
-              <p className="font-display max-w-xl text-2xl leading-snug text-cream sm:text-3xl">
+              <p className="font-display max-w-xl text-2xl leading-snug text-ink sm:text-3xl">
                 Kakinada roots. Built for businesses everywhere.
               </p>
               <Button href="/contact" variant="accent" className="mt-4">
