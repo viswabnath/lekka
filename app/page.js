@@ -5,6 +5,7 @@ import LedgerRow from "@/components/LedgerRow";
 import ScreenshotImage from "@/components/ScreenshotImage";
 import ProductShowcase from "@/components/hero/ProductShowcase";
 import BackgroundDoodle from "@/components/BackgroundDoodle";
+import StatCounter from "@/components/StatCounter";
 import {
   IconPeople,
   IconInvoice,
@@ -368,11 +369,13 @@ export default function Home() {
                 ["700+", "expense records logged"],
                 ["250+", "income entries reconciled"],
                 ["12", "tools behind one login"],
-              ].map(([big, small]) => (
+              ].map(([big, small], i) => (
                 <div key={big}>
-                  <div className="font-mono-figures text-3xl font-medium text-ink sm:text-4xl">
-                    {big}
-                  </div>
+                  <StatCounter
+                    value={big}
+                    delay={i * 0.1}
+                    className="font-mono-figures text-3xl font-medium text-ink sm:text-4xl"
+                  />
                   <div className="mt-2 text-sm text-ink-muted">{small}</div>
                 </div>
               ))}
