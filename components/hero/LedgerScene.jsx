@@ -49,9 +49,9 @@ function Core() {
       <mesh ref={ref}>
         <icosahedronGeometry args={[0.9, 1]} />
         <meshStandardMaterial
-          color="#cc9d2e"
-          emissive="#cc9d2e"
-          emissiveIntensity={0.35}
+          color="#5e6ad2"
+          emissive="#6e79dd"
+          emissiveIntensity={0.5}
           wireframe
           transparent
           opacity={0.9}
@@ -61,19 +61,19 @@ function Core() {
   );
 }
 
-export default function LedgerScene() {
+export default function LedgerScene({ scale = 1 }) {
   return (
-    <>
+    <group scale={scale}>
       <ambientLight intensity={0.5} />
-      <pointLight position={[4, 3, 4]} intensity={40} color="#e6b940" />
-      <pointLight position={[-4, -2, -3]} intensity={20} color="#2f7d6d" />
+      <pointLight position={[4, 3, 4]} intensity={40} color="#8b93e0" />
+      <pointLight position={[-4, -2, -3]} intensity={22} color="#5e6ad2" />
 
       <group rotation={[0.25, 0, 0.1]}>
-        <Stream color="#2f7d6d" radius={2.4} offsetX={-1.9} speed={0.12} />
-        <Stream color="#8c3327" radius={2.2} offsetX={0} speed={-0.09} />
-        <Stream color="#f4eedd" radius={2.4} offsetX={1.9} speed={0.15} />
+        <Stream color="#8b93e0" radius={2.4} offsetX={-1.9} speed={0.12} />
+        <Stream color="#4a55be" radius={2.2} offsetX={0} speed={-0.09} />
+        <Stream color="#f7f8f8" radius={2.4} offsetX={1.9} speed={0.15} />
         <Core />
       </group>
-    </>
+    </group>
   );
 }
