@@ -74,9 +74,11 @@ export default function Home() {
                 your whole business.
               </h1>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink-muted">
-                Lekka brings your payroll, invoices, timesheets, and clients
-                into one place — so you stop stitching five disconnected
-                tools together every week.
+                Most businesses don&rsquo;t fail from one bad decision — they
+                drift, quietly, because nobody&rsquo;s watching all the
+                numbers at once. Lekka brings your payroll, invoices,
+                timesheets, and clients into one place, so nothing about
+                your business happens without you knowing.
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-4">
                 <Button href="/contact" variant="accent">
@@ -107,9 +109,11 @@ export default function Home() {
                 adding it up themselves.
               </p>
               <p className="mt-6 max-w-xl text-ink-muted">
-                Lekka replaces that with one system your whole team already
-                knows how to use — because it&rsquo;s built the way your
-                business already runs, not the other way around.
+                That&rsquo;s not a workflow problem. That&rsquo;s a business
+                running on assumptions — and assumptions are how good
+                businesses quietly go sideways. Lekka replaces that with one
+                system your whole team already knows how to use, built the
+                way your business already runs, not the other way around.
               </p>
             </Reveal>
             <Reveal direction="right" delay={0.08} className="hidden lg:block">
@@ -121,6 +125,46 @@ export default function Home() {
               />
             </Reveal>
           </div>
+        </div>
+      </section>
+
+      {/* What "ignoring it" actually costs */}
+      <section className="bg-paper">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
+          <Reveal direction="up">
+            <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-danger">
+              This is what &ldquo;we&rsquo;ll sort it out later&rdquo; usually looks like
+            </div>
+            <div className="mt-8 grid gap-8 sm:grid-cols-3">
+              {[
+                {
+                  title: "A client who was never actually billed",
+                  body: "The work got done, the invoice didn't get sent, and nobody noticed until the money should already have landed.",
+                },
+                {
+                  title: "An expense nobody remembers approving",
+                  body: "It's in the account statement. It's not in anyone's head. By the time someone asks, the answer is a shrug.",
+                },
+                {
+                  title: "A number in your head that isn't the number in your account",
+                  body: "You could tell someone your cash position right now. It would be a guess — and you'd be running the business on it anyway.",
+                },
+              ].map((v) => (
+                <div key={v.title}>
+                  <h3 className="font-display text-xl font-medium text-ink">
+                    {v.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">
+                    {v.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p className="font-display mt-14 max-w-2xl text-2xl leading-snug text-ink sm:text-3xl">
+              You don&rsquo;t need more software. You need one place where
+              nothing about your business can quietly hide.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -347,11 +391,14 @@ export default function Home() {
           <Reveal>
             <div className="rounded-lg border border-accent/25 bg-paper px-8 py-16 text-center sm:px-16">
               <h2 className="font-display text-3xl font-medium text-ink sm:text-4xl">
-                See Lekka running your business.
+                The one system your business can&rsquo;t afford to keep
+                putting off.
               </h2>
               <p className="mx-auto mt-4 max-w-md text-ink-muted">
-                We&rsquo;ll set it up with your own data and walk you
-                through it — no generic demo account.
+                Every week you run on five disconnected tools is a week
+                you&rsquo;re choosing to make this harder than it needs to
+                be. Let&rsquo;s set it up with your own data and show you
+                what you&rsquo;ve been missing.
               </p>
               <div className="mt-8 flex justify-center">
                 <Button href="/contact" variant="accent">

@@ -142,7 +142,8 @@ export default function IndustriesPage() {
           <Reveal>
             <div className="rounded-lg border border-accent/25 bg-paper px-8 py-16 sm:px-16">
               <h2 className="font-display text-3xl font-medium text-ink sm:text-4xl">
-                Sounds like your business?
+                Sounds like your business? Then this is the part
+                where you stop guessing.
               </h2>
               <div className="mt-8 flex justify-center">
                 <Button href="/contact" variant="accent">
