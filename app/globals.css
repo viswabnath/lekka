@@ -1,26 +1,129 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Canvas — deep indigo ledger-ink, the dominant dark surface */
+  --canvas: #14182b;
+  --canvas-2: #1c2140;
+  --canvas-3: #242a52;
+
+  /* Paper — aged ledger paper, used for card surfaces & light sections */
+  --paper: #f4eedd;
+  --paper-2: #eae1c8;
+  --paper-3: #ddd0ac;
+
+  /* Ink — text on paper */
+  --ink: #191c30;
+  --ink-muted: #565040;
+
+  /* Text on canvas */
+  --cream: #f4eedd;
+  --cream-muted: #a9a8c4;
+
+  /* Accents */
+  --brass: #cc9d2e;
+  --brass-bright: #e6b940;
+  --oxblood: #8c3327;
+  --harbor: #2f7d6d;
+  --harbor-deep: #1d4f45;
+
+  /* Rules */
+  --line-on-canvas: rgba(244, 238, 221, 0.14);
+  --line-on-paper: rgba(25, 28, 48, 0.14);
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-canvas: var(--canvas);
+  --color-canvas-2: var(--canvas-2);
+  --color-canvas-3: var(--canvas-3);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-paper-3: var(--paper-3);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-cream: var(--cream);
+  --color-cream-muted: var(--cream-muted);
+  --color-brass: var(--brass);
+  --color-brass-bright: var(--brass-bright);
+  --color-oxblood: var(--oxblood);
+  --color-harbor: var(--harbor);
+  --color-harbor-deep: var(--harbor-deep);
+  --color-line-on-canvas: var(--line-on-canvas);
+  --color-line-on-paper: var(--line-on-paper);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--canvas);
+  color: var(--cream);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--brass);
+  color: var(--ink);
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.font-mono-figures {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Ledger rule — a thin double-line motif borrowed from account-book column
+   headers. Used as a structural divider, not decoration: it always sits
+   under something that functions like a ledger heading or total. */
+.ledger-rule {
+  position: relative;
+  height: 3px;
+}
+.ledger-rule::before,
+.ledger-rule::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+.ledger-rule::before {
+  top: 0;
+  background: currentColor;
+  opacity: 0.9;
+}
+.ledger-rule::after {
+  top: 2px;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

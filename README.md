@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Lekka — marketing website
 
-## Getting Started
-
-First, run the development server:
+Marketing site for **Lekka, by OneMark** (name is provisional — revisit
+before launch). Next.js 16 (App Router), Tailwind v4, GSAP (scroll reveals +
+page transitions), and React Three Fiber (hero visualization).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Design system
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Rooted in "Lekka" (Telugu for account/reckoning) and OneMark's Kakinada,
+coastal-Andhra origin — see the full palette/type rationale in
+`app/globals.css`. Deep indigo-ink canvas, ledger-paper cards, brass/gold and
+oxblood accents, tabular-figure numerals (IBM Plex Mono) for anything that's
+actually a number.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `components/Reveal.jsx` — scroll-triggered fade/lift, used everywhere instead of one-off animations
+- `components/PageTransition.jsx` — the brass-rule route-change sweep
+- `components/hero/` — the 3D hero (three converging data streams → one core); client-only via `LedgerHeroLoader`
+- `components/LedgerRow.jsx` — the feature-as-ledger-line-item structural motif
+- `components/mockups/` — stylized dashboard mockups standing in for real product screenshots
 
-## Learn More
+## Before this goes live
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Name.** "Lekka" is a working name, not finalized — check domain/trademark availability before committing.
+2. **Real screenshots.** `components/mockups/*` are stylized placeholders, not actual product screenshots. Swap them for real captures of the OneMark portal (with realistic-but-non-sensitive demo data) once ready.
+3. **Contact form isn't wired to anything yet.** `app/api/contact/route.js` validates and `console.log`s submissions — it does not send an email or hit a CRM. Connect it to a real destination (e.g. Resend, or a webhook) before publishing.
+4. **`hello@onemark.co.in`** in `app/contact/page.js` is a placeholder based on your domain — confirm that inbox actually exists before launch.
+5. **No real pricing numbers** — pricing page intentionally has no public price list (talk-to-us model), matching the fork-and-deploy-per-customer approach.
