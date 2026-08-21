@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Reveal from "./Reveal";
 
 const COLUMNS = [
   {
@@ -23,14 +22,14 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-line-on-canvas bg-canvas-2">
-      <Reveal className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+    <footer className="border-t border-line-on-paper bg-paper-2">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <span className="font-display text-2xl font-medium text-cream">
+            <span className="font-display text-2xl font-medium text-ink">
               Lekka
             </span>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream-muted">
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-muted">
               One place for payroll, invoices, timesheets, and clients —
               built for businesses that are done juggling five tools to run
               one.
@@ -39,7 +38,7 @@ export default function Footer() {
 
           {COLUMNS.map((col) => (
             <div key={col.title}>
-              <div className="font-mono-figures text-[11px] uppercase tracking-[0.18em] text-cream-muted">
+              <div className="font-mono-figures text-[11px] uppercase tracking-[0.18em] text-ink-subtle">
                 {col.title}
               </div>
               <ul className="mt-4 space-y-3">
@@ -47,7 +46,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-cream/85 transition-colors hover:text-brass"
+                      className="text-sm text-ink-muted transition-colors hover:text-accent"
                     >
                       {link.label}
                     </Link>
@@ -58,17 +57,17 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="ledger-rule mt-14 text-line-on-canvas" />
+        <div className="ledger-rule mt-14 text-line-on-paper" />
 
-        <div className="mt-6 flex flex-col gap-3 text-xs text-cream-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-6 flex flex-col gap-3 text-xs text-ink-subtle sm:flex-row sm:items-center sm:justify-between">
           <p>
             Designed &amp; built by{" "}
-            <span className="text-cream">OneMark</span> · Kakinada, Andhra
+            <span className="text-ink">OneMark</span> · Kakinada, Andhra
             Pradesh, India — built for businesses everywhere.
           </p>
           <p>© {year} OneMark. All rights reserved.</p>
         </div>
-      </Reveal>
+      </div>
     </footer>
   );
 }

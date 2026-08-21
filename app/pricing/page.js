@@ -57,35 +57,36 @@ export default function PricingPage() {
         subtitle="Lekka isn't a shared database with your data sitting next to a competitor's. Every customer gets their own deployment — so pricing is based on your team's size, not a per-seat meter."
       />
 
-      <section className="bg-canvas">
+      <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
-          <div className="grid gap-6 lg:grid-cols-3">
-            {TIERS.map((tier, i) => (
-              <Reveal key={tier.name} delay={i * 0.06}>
+          <Reveal>
+            <div className="grid gap-6 lg:grid-cols-3">
+              {TIERS.map((tier) => (
                 <div
+                  key={tier.name}
                   className={`flex h-full flex-col rounded-lg border p-8 ${
                     tier.featured
-                      ? "border-brass bg-canvas-2"
-                      : "border-line-on-canvas bg-canvas-2/40"
+                      ? "border-accent bg-paper-2 shadow-[0_20px_50px_-25px_rgba(94,106,210,0.35)]"
+                      : "border-line-on-paper bg-paper-2/60"
                   }`}
                 >
                   {tier.featured && (
-                    <span className="font-mono-figures mb-4 inline-block w-fit rounded-sm bg-brass px-2.5 py-1 text-[10px] uppercase tracking-[0.14em] text-ink">
+                    <span className="font-mono-figures mb-4 inline-block w-fit rounded-sm bg-accent px-2.5 py-1 text-[10px] uppercase tracking-[0.14em] text-white">
                       Most common
                     </span>
                   )}
-                  <h3 className="font-display text-2xl font-medium text-cream">
+                  <h3 className="font-display text-2xl font-medium text-ink">
                     {tier.name}
                   </h3>
-                  <div className="font-mono-figures mt-2 text-sm text-brass">
+                  <div className="font-mono-figures mt-2 text-sm text-accent">
                     {tier.size}
                   </div>
-                  <p className="mt-4 text-sm text-cream-muted">{tier.description}</p>
+                  <p className="mt-4 text-sm text-ink-muted">{tier.description}</p>
 
                   <ul className="mt-7 flex-1 space-y-3">
                     {tier.points.map((p) => (
-                      <li key={p} className="flex items-start gap-3 text-sm text-cream/90">
-                        <IconCheck className="mt-0.5 shrink-0 text-harbor" />
+                      <li key={p} className="flex items-start gap-3 text-sm text-ink/90">
+                        <IconCheck className="mt-0.5 shrink-0 text-success" />
                         {p}
                       </li>
                     ))}
@@ -93,18 +94,16 @@ export default function PricingPage() {
 
                   <Button
                     href="/contact"
-                    variant={tier.featured ? "brass" : "outlineDark"}
+                    variant={tier.featured ? "accent" : "outlineLight"}
                     className="mt-8 w-full"
                   >
                     Talk to us
                   </Button>
                 </div>
-              </Reveal>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <Reveal delay={0.1}>
-            <p className="mt-10 text-center text-sm text-cream-muted">
+            <p className="mt-10 text-center text-sm text-ink-muted">
               No public price list on purpose — every deployment is
               configured for how your business actually runs. Book a demo
               and we&rsquo;ll quote it straight, on the call.

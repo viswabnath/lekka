@@ -1,19 +1,19 @@
 import Link from "next/link";
 
 const variants = {
-  brass:
-    "bg-brass text-ink hover:bg-brass-bright shadow-[0_1px_0_0_rgba(0,0,0,0.15)]",
+  accent:
+    "bg-accent text-white hover:bg-accent-bright shadow-[0_1px_0_0_rgba(0,0,0,0.15)]",
   outlineDark:
-    "border border-cream/30 text-cream hover:border-brass hover:text-brass",
+    "border border-cream/30 text-cream hover:border-accent hover:text-accent",
   outlineLight:
-    "border border-ink/25 text-ink hover:border-oxblood hover:text-oxblood",
-  textDark: "text-cream hover:text-brass",
-  textLight: "text-ink hover:text-oxblood",
+    "border border-ink/25 text-ink hover:border-danger hover:text-danger",
+  textDark: "text-cream hover:text-accent",
+  textLight: "text-ink hover:text-danger",
 };
 
 export default function Button({
   href,
-  variant = "brass",
+  variant = "accent",
   className = "",
   children,
   ...props

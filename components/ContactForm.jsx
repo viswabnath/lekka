@@ -5,7 +5,7 @@ import Button from "./Button";
 import { IconArrowRight, IconCheck } from "./icons";
 
 const inputClass =
-  "w-full rounded-sm border border-line-on-paper bg-paper px-4 py-3 text-sm text-ink placeholder:text-ink-muted/70 outline-none transition-colors focus:border-oxblood";
+  "w-full rounded-sm border border-line-on-paper bg-paper px-4 py-3 text-sm text-ink placeholder:text-ink-muted/70 outline-none transition-colors focus:border-danger";
 
 export default function ContactForm() {
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
@@ -32,7 +32,7 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <div className="flex flex-col items-center gap-3 rounded-lg border border-line-on-paper bg-paper-2/50 px-8 py-16 text-center">
-        <IconCheck className="text-harbor-deep" />
+        <IconCheck className="text-success-deep" />
         <p className="font-display text-xl text-ink">Message sent.</p>
         <p className="text-sm text-ink-muted">
           We&rsquo;ll get back to you within a business day.
@@ -91,13 +91,13 @@ export default function ContactForm() {
         />
       </div>
 
-      <Button type="submit" variant="brass" className="w-full sm:w-auto" disabled={status === "sending"}>
+      <Button type="submit" variant="accent" className="w-full sm:w-auto" disabled={status === "sending"}>
         {status === "sending" ? "Sending…" : "Send message"}
         {status !== "sending" && <IconArrowRight />}
       </Button>
 
       {status === "error" && (
-        <p className="text-sm text-oxblood">
+        <p className="text-sm text-danger">
           Something went wrong — please email us directly instead.
         </p>
       )}

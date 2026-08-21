@@ -51,7 +51,7 @@ const MODULES = [
 export default function Home() {
   return (
     <>
-      {/* Hero */}
+      {/* Hero — the one dark signature moment */}
       <section className="relative overflow-hidden bg-canvas">
         <LedgerHeroLoader />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-canvas/40 via-transparent to-canvas" />
@@ -59,27 +59,21 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl px-6 pb-28 pt-24 lg:px-10 lg:pb-40 lg:pt-32">
           <div className="max-w-2xl">
             <Reveal>
-              <span className="font-mono-figures inline-block rounded-sm border border-line-on-canvas px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-brass">
+              <span className="font-mono-figures inline-block rounded-sm border border-line-on-canvas px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-accent">
                 Now taking early customers
               </span>
-            </Reveal>
-            <Reveal delay={0.08}>
               <h1 className="font-display mt-6 text-5xl font-medium leading-[1.05] text-cream sm:text-6xl lg:text-7xl">
                 One ledger for
                 <br />
                 your whole business.
               </h1>
-            </Reveal>
-            <Reveal delay={0.16}>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-cream-muted">
                 Lekka brings your payroll, invoices, timesheets, and clients
                 into one place — so you stop stitching five disconnected
                 tools together every week.
               </p>
-            </Reveal>
-            <Reveal delay={0.24}>
               <div className="mt-9 flex flex-wrap items-center gap-4">
-                <Button href="/contact" variant="brass">
+                <Button href="/contact" variant="accent">
                   Book a demo
                   <IconArrowRight />
                 </Button>
@@ -93,18 +87,16 @@ export default function Home() {
       </section>
 
       {/* The problem, said plainly */}
-      <section className="bg-canvas">
+      <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
           <Reveal>
-            <p className="font-display max-w-3xl text-2xl leading-snug text-cream sm:text-3xl">
+            <p className="font-display max-w-3xl text-2xl leading-snug text-ink sm:text-3xl">
               Right now, your invoices live in one app, timesheets in a
               spreadsheet, payslips get rebuilt by hand every month, and
               nobody can say what your real cash position is without adding
               it up themselves.
             </p>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="mt-6 max-w-xl text-cream-muted">
+            <p className="mt-6 max-w-xl text-ink-muted">
               Lekka replaces that with one system your whole team already
               knows how to use — because it&rsquo;s built the way your
               business already runs, not the other way around.
@@ -114,28 +106,28 @@ export default function Home() {
       </section>
 
       {/* Module ledger */}
-      <section className="bg-canvas">
+      <section className="bg-paper">
         <div className="mx-auto max-w-4xl px-6 pb-20 lg:px-10 lg:pb-28">
-          <Reveal as="div">
-            <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-cream-muted">
+          <Reveal>
+            <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-ink-subtle">
               What&rsquo;s inside
             </div>
+            <div className="mt-4">
+              {MODULES.map((m) => (
+                <LedgerRow key={m.code} {...m} />
+              ))}
+            </div>
           </Reveal>
-          <div className="mt-4">
-            {MODULES.map((m, i) => (
-              <LedgerRow key={m.code} {...m} delay={i * 0.05} />
-            ))}
-          </div>
         </div>
       </section>
 
       {/* Screenshots */}
-      <section className="bg-paper py-20 lg:py-28">
+      <section className="bg-paper-2 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
-            <Reveal>
+          <Reveal>
+            <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
               <div>
-                <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-oxblood">
+                <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-danger">
                   Finance, at a glance
                 </div>
                 <h2 className="font-display mt-4 text-3xl font-medium leading-tight text-ink sm:text-4xl">
@@ -149,19 +141,15 @@ export default function Home() {
                   number in your account.
                 </p>
               </div>
-            </Reveal>
-            <Reveal delay={0.1}>
               <ScreenshotImage src="/screenshots/finance.jpg" alt="Client statement showing billed, paid, and outstanding totals in Lekka" />
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
 
-          <div className="mt-24 grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
-            <Reveal className="order-2 lg:order-1">
-              <ScreenshotImage src="/screenshots/timesheet.jpg" alt="Timesheet dashboard showing monthly attendance heatmap and productivity trend" />
-            </Reveal>
-            <Reveal delay={0.1} className="order-1 lg:order-2">
-              <div>
-                <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-oxblood">
+          <Reveal>
+            <div className="mt-24 grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
+              <ScreenshotImage src="/screenshots/timesheet.jpg" alt="Timesheet dashboard showing monthly attendance heatmap and productivity trend" className="order-2 lg:order-1" />
+              <div className="order-1 lg:order-2">
+                <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-danger">
                   Attendance, without the spreadsheet
                 </div>
                 <h2 className="font-display mt-4 text-3xl font-medium leading-tight text-ink sm:text-4xl">
@@ -175,46 +163,67 @@ export default function Home() {
                   &ldquo;let me check.&rdquo;
                 </p>
               </div>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <div className="mt-24 grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
+              <div>
+                <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-danger">
+                  Documents that look designed
+                </div>
+                <h2 className="font-display mt-4 text-3xl font-medium leading-tight text-ink sm:text-4xl">
+                  Invoices and proposals
+                  <br />
+                  clients actually notice.
+                </h2>
+                <p className="mt-5 max-w-md text-ink-muted">
+                  GST-compliant invoices, sequential and never duplicated,
+                  and a branded multi-slide quotation deck generated from
+                  your service catalog in seconds.
+                </p>
+              </div>
+              <ScreenshotImage src="/screenshots/invoice.jpg" alt="GST tax invoice generated in Lekka, with line items and bank details" />
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Trust strip */}
-      <section className="bg-canvas">
+      <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
           <Reveal>
-            <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-cream-muted">
+            <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-ink-subtle">
               Built the hard way — by running our own business on it, first
             </div>
-          </Reveal>
-          <div className="ledger-rule mt-6 text-line-on-canvas" />
-          <div className="mt-10 grid grid-cols-2 gap-8 sm:grid-cols-4">
-            {[
-              ["Role-based", "access, enforced at the database"],
-              ["Nightly", "encrypted, automatic backups"],
-              ["Every action", "logged, permanently"],
-              ["Built in India,", "for businesses everywhere"],
-            ].map(([big, small]) => (
-              <Reveal key={big} delay={0.05}>
-                <div className="font-display text-2xl text-cream sm:text-3xl">
-                  {big}
+            <div className="ledger-rule mt-6 text-line-on-paper" />
+            <div className="mt-10 grid grid-cols-2 gap-8 sm:grid-cols-4">
+              {[
+                ["Role-based", "access, enforced at the database"],
+                ["Nightly", "encrypted, automatic backups"],
+                ["Every action", "logged, permanently"],
+                ["Built in India,", "for businesses everywhere"],
+              ].map(([big, small]) => (
+                <div key={big}>
+                  <div className="font-display text-2xl text-ink sm:text-3xl">
+                    {big}
+                  </div>
+                  <div className="mt-2 text-sm text-ink-muted">{small}</div>
                 </div>
-                <div className="mt-2 text-sm text-cream-muted">{small}</div>
-              </Reveal>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Origin line */}
-      <section className="bg-canvas-2">
+      <section className="bg-paper-2">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
           <Reveal>
             <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-4">
-                <IconAnchor className="text-brass" />
-                <p className="max-w-md text-sm text-cream-muted">
+                <IconAnchor className="text-accent" />
+                <p className="max-w-md text-sm text-ink-muted">
                   Designed and built by OneMark on the coast of Andhra
                   Pradesh, in Kakinada — and made to run a business
                   anywhere in the world.
@@ -222,7 +231,7 @@ export default function Home() {
               </div>
               <Link
                 href="/about"
-                className="flex shrink-0 items-center gap-2 text-sm text-brass hover:text-brass-bright"
+                className="flex shrink-0 items-center gap-2 text-sm text-accent hover:text-accent-bright"
               >
                 Our story <IconArrowRight />
               </Link>
@@ -231,7 +240,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA band */}
+      {/* CTA band — the closing dark bookend */}
       <section className="bg-canvas">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
           <Reveal>
@@ -244,7 +253,7 @@ export default function Home() {
                 through it — no generic demo account.
               </p>
               <div className="mt-8 flex justify-center">
-                <Button href="/contact" variant="brass">
+                <Button href="/contact" variant="accent">
                   Book a demo
                   <IconArrowRight />
                 </Button>

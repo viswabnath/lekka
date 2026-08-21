@@ -46,33 +46,33 @@ export default function IndustriesPage() {
         subtitle="Lekka fits the shape of a project- and retainer-based services business. It's not accounting software, not an inventory system, and not built for a product company."
       />
 
-      <section className="bg-canvas">
+      <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
-          <div className="grid gap-px overflow-hidden rounded-lg border border-line-on-canvas bg-line-on-canvas sm:grid-cols-2">
-            {FITS.map((f, i) => (
-              <Reveal key={f.title} delay={i * 0.05}>
-                <div className="h-full bg-canvas p-8 lg:p-10">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-sm border border-line-on-canvas text-brass">
+          <Reveal>
+            <div className="grid gap-px overflow-hidden rounded-lg border border-line-on-paper bg-line-on-paper sm:grid-cols-2">
+              {FITS.map((f) => (
+                <div key={f.title} className="h-full bg-paper p-8 lg:p-10">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-sm border border-line-on-paper text-accent">
                     {f.icon}
                   </div>
-                  <h3 className="font-display mt-5 text-xl font-medium text-cream sm:text-2xl">
+                  <h3 className="font-display mt-5 text-xl font-medium text-ink sm:text-2xl">
                     {f.title}
                   </h3>
-                  <p className="mt-3 text-[15px] leading-relaxed text-cream-muted">
+                  <p className="mt-3 text-[15px] leading-relaxed text-ink-muted">
                     {f.body}
                   </p>
                 </div>
-              </Reveal>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Honest about fit */}
-      <section className="bg-paper">
+      <section className="bg-paper-2">
         <div className="mx-auto max-w-3xl px-6 py-20 text-center lg:px-10 lg:py-24">
           <Reveal>
-            <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-oxblood">
+            <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-danger">
               Being straight with you
             </div>
             <p className="font-display mt-5 text-2xl leading-snug text-ink sm:text-3xl">
@@ -95,7 +95,7 @@ export default function IndustriesPage() {
               Sounds like your business?
             </h2>
             <div className="mt-8 flex justify-center">
-              <Button href="/contact" variant="brass">
+              <Button href="/contact" variant="accent">
                 Book a demo <IconArrowRight />
               </Button>
             </div>

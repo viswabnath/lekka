@@ -15,17 +15,18 @@
   /* Ink — text on paper (light mode) */
   --ink: #0d0e10;
   --ink-muted: #4a4d54;
+  --ink-subtle: #8a8f98;
 
   /* Text on canvas (dark mode) */
   --cream: #f7f8f8;
   --cream-muted: #d0d6e0;
 
   /* Accents — OneMark's actual brand tokens */
-  --brass: #5e6ad2;
-  --brass-bright: #6e79dd;
-  --oxblood: #dc2626;
-  --harbor: #27a644;
-  --harbor-deep: #1f8a38;
+  --accent: #5e6ad2;
+  --accent-bright: #4a55be;
+  --danger: #dc2626;
+  --success: #27a644;
+  --success-deep: #1f8a38;
 
   /* Rules */
   --line-on-canvas: #23252a;
@@ -45,13 +46,14 @@
   --color-paper-3: var(--paper-3);
   --color-ink: var(--ink);
   --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
   --color-cream: var(--cream);
   --color-cream-muted: var(--cream-muted);
-  --color-brass: var(--brass);
-  --color-brass-bright: var(--brass-bright);
-  --color-oxblood: var(--oxblood);
-  --color-harbor: var(--harbor);
-  --color-harbor-deep: var(--harbor-deep);
+  --color-accent: var(--accent);
+  --color-accent-bright: var(--accent-bright);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --color-success-deep: var(--success-deep);
   --color-line-on-canvas: var(--line-on-canvas);
   --color-line-on-paper: var(--line-on-paper);
 
@@ -74,14 +76,14 @@ html {
 }
 
 body {
-  background: var(--canvas);
-  color: var(--cream);
+  background: var(--paper);
+  color: var(--ink);
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: var(--brass);
+  background: var(--accent);
   color: var(--cream);
 }
 

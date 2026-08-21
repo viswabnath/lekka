@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 import gsap from "gsap";
 
 /**
- * A brass rule sweeps across the top on every navigation — like a pen
- * underlining a fresh ledger entry — while the page content fades and
- * lifts in underneath it. One deliberate transition, not scattered effects.
+ * A thin accent rule sweeps across the top on every navigation while the
+ * page content fades and lifts in underneath it. One deliberate transition,
+ * not scattered effects.
  */
 export default function PageTransition({ children }) {
   const pathname = usePathname();
@@ -33,17 +33,17 @@ export default function PageTransition({ children }) {
 
       const tl = gsap.timeline();
       tl.set(sweep, { scaleX: 0, transformOrigin: "left" })
-        .set(content, { opacity: 0, y: 14 })
-        .to(sweep, { scaleX: 1, duration: 0.45, ease: "power3.inOut" })
+        .set(content, { opacity: 0, y: 10 })
+        .to(sweep, { scaleX: 1, duration: 0.3, ease: "power3.inOut" })
         .to(
           sweep,
-          { scaleX: 0, transformOrigin: "right", duration: 0.45, ease: "power3.inOut" },
-          "-=0.05"
+          { scaleX: 0, transformOrigin: "right", duration: 0.3, ease: "power3.inOut" },
+          "-=0.03"
         )
         .to(
           content,
-          { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-          "-=0.3"
+          { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" },
+          "-=0.2"
         );
     });
 
@@ -54,7 +54,7 @@ export default function PageTransition({ children }) {
     <>
       <div
         ref={sweepRef}
-        className="fixed top-0 left-0 right-0 h-[3px] bg-brass z-[100] pointer-events-none"
+        className="fixed top-0 left-0 right-0 h-[3px] bg-accent z-[100] pointer-events-none"
         style={{ transform: "scaleX(0)" }}
         aria-hidden="true"
       />

@@ -1,9 +1,7 @@
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
-import ScreenshotFrame from "@/components/ScreenshotFrame";
 import ScreenshotImage from "@/components/ScreenshotImage";
-import PayrollMockup from "@/components/mockups/PayrollMockup";
 import { IconCheck, IconArrowRight } from "@/components/icons";
 
 export const metadata = {
@@ -16,7 +14,7 @@ const SECTIONS = [
     code: "FIN",
     eyebrow: "Invoices, quotations & finance",
     title: "One number for your cash position — always current.",
-    body: "GST and non-GST invoices, sequential and never duplicated. Quotations that go out looking professional. Every income, expense, and advance reconciled automatically against the right account.",
+    body: "Every income, expense, and advance reconciled automatically against the right account and client. The number on the screen is the number in the bank.",
     points: [
       "GST-compliant and simple invoices from the same tool",
       "Advance payments auto-linked to the invoice they belong to",
@@ -27,18 +25,32 @@ const SECTIONS = [
     screenshotAlt: "Client statement showing billed, paid, and outstanding totals in Lekka",
   },
   {
+    code: "DOC",
+    eyebrow: "Invoices, quotations & receipts",
+    title: "Client-facing documents that look like you hired a design team.",
+    body: "A 9-slide branded proposal deck generated from your service catalog in seconds. GST-compliant invoices, sequential and never duplicated. Acknowledgment receipts for advances.",
+    points: [
+      "Quotations as a polished, multi-slide branded deck",
+      "Tax and non-tax invoices from one tool",
+      "Per-client invoice numbering — never duplicated, never skipped",
+      "Every document saved and searchable in one archive",
+    ],
+    screenshot: "/screenshots/quotation.jpg",
+    screenshotAlt: "Nine-slide branded quotation deck with live preview in the quotation editor",
+  },
+  {
     code: "HR",
     eyebrow: "People & payroll",
-    title: "Payslips your team can pull up themselves.",
-    body: "Generated straight from attendance and approved leave — no manual recalculation, no resending last month's PDF because someone lost it.",
+    title: "One directory, not a folder of spreadsheets.",
+    body: "Every employee's role, department, and join date in one place — with payslips generated straight from real attendance and leave, not rebuilt by hand each month.",
     points: [
+      "Live-synced employee directory, role and department at a glance",
       "Payslips generated from real attendance and leave data",
       "Every employee sees their own history — no admin bottleneck",
       "PTO and holiday calendar, with approvals built in",
-      "Employee directory with the details each role is allowed to see",
     ],
-    mockup: <PayrollMockup />,
-    label: "lekka.app/payroll",
+    screenshot: "/screenshots/employees.jpg",
+    screenshotAlt: "Employee directory showing active team members, roles, and departments",
   },
   {
     code: "OPS",
@@ -68,6 +80,20 @@ const SECTIONS = [
     screenshot: "/screenshots/clients.jpg",
     screenshotAlt: "Client and service master list showing sector, contact info, and status",
   },
+  {
+    code: "SEC",
+    eyebrow: "Access, audit & backups",
+    title: "Every action, permanently on record.",
+    body: "Who logged in, what they changed, and when — an immutable ledger of portal activity, not a feature you have to remember to check.",
+    points: [
+      "Role-based access enforced at the database, not just the screen",
+      "Every login, edit, and approval logged permanently",
+      "Nightly encrypted, automatic backups",
+      "Nothing is ever silently overwritten",
+    ],
+    screenshot: "/screenshots/audit-log.jpg",
+    screenshotAlt: "Audit log showing a real-time immutable ledger of portal activity",
+  },
 ];
 
 export default function ProductPage() {
@@ -80,39 +106,32 @@ export default function ProductPage() {
       />
 
       {SECTIONS.map((s, i) => (
-        <section
-          key={s.code}
-          className={i % 2 === 0 ? "bg-canvas" : "bg-canvas-2"}
-        >
+        <section key={s.code} className={i % 2 === 0 ? "bg-paper" : "bg-paper-2"}>
           <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-            <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
-              <Reveal className={i % 2 === 1 ? "lg:order-2" : ""}>
-                <div>
-                  <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-brass">
+            <Reveal>
+              <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
+                <div className={i % 2 === 1 ? "lg:order-2" : ""}>
+                  <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-accent">
                     {s.code} · {s.eyebrow}
                   </div>
-                  <h2 className="font-display mt-4 text-3xl font-medium leading-tight text-cream sm:text-4xl">
+                  <h2 className="font-display mt-4 text-3xl font-medium leading-tight text-ink sm:text-4xl">
                     {s.title}
                   </h2>
-                  <p className="mt-5 max-w-md text-cream-muted">{s.body}</p>
+                  <p className="mt-5 max-w-md text-ink-muted">{s.body}</p>
                   <ul className="mt-7 space-y-3">
                     {s.points.map((p) => (
-                      <li key={p} className="flex items-start gap-3 text-sm text-cream/90">
-                        <IconCheck className="mt-0.5 shrink-0 text-harbor" />
+                      <li key={p} className="flex items-start gap-3 text-sm text-ink/90">
+                        <IconCheck className="mt-0.5 shrink-0 text-success" />
                         {p}
                       </li>
                     ))}
                   </ul>
                 </div>
-              </Reveal>
-              <Reveal delay={0.1} className={i % 2 === 1 ? "lg:order-1" : ""}>
-                {s.screenshot ? (
+                <div className={i % 2 === 1 ? "lg:order-1" : ""}>
                   <ScreenshotImage src={s.screenshot} alt={s.screenshotAlt} />
-                ) : (
-                  <ScreenshotFrame label={s.label}>{s.mockup}</ScreenshotFrame>
-                )}
-              </Reveal>
-            </div>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </section>
       ))}
@@ -124,7 +143,7 @@ export default function ProductPage() {
               See it running with your own data.
             </h2>
             <div className="mt-8 flex justify-center">
-              <Button href="/contact" variant="brass">
+              <Button href="/contact" variant="accent">
                 Book a demo <IconArrowRight />
               </Button>
             </div>

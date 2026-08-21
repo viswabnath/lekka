@@ -5,7 +5,7 @@ export default function PageHero({ eyebrow, title, subtitle }) {
     <section className="border-b border-line-on-canvas bg-canvas">
       <div className="mx-auto max-w-4xl px-6 py-20 lg:px-10 lg:py-28">
         <Reveal>
-          <span className="font-mono-figures text-xs uppercase tracking-[0.18em] text-brass">
+          <span className="font-mono-figures text-xs uppercase tracking-[0.18em] text-accent">
             {eyebrow}
           </span>
         </Reveal>

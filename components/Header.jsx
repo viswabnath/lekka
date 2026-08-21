@@ -36,13 +36,13 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line-on-canvas bg-canvas/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-line-on-paper bg-paper/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
         <Link href="/" className="flex items-baseline gap-2">
-          <span className="font-display text-2xl font-medium text-cream">
+          <span className="font-display text-2xl font-medium text-ink">
             Lekka
           </span>
-          <span className="font-mono-figures text-[10px] uppercase tracking-[0.18em] text-cream-muted">
+          <span className="font-mono-figures text-[10px] uppercase tracking-[0.18em] text-ink-muted">
             by OneMark
           </span>
         </Link>
@@ -54,8 +54,8 @@ export default function Header() {
               href={item.href}
               className={`text-sm transition-colors ${
                 pathname === item.href
-                  ? "text-brass"
-                  : "text-cream-muted hover:text-cream"
+                  ? "text-accent"
+                  : "text-ink-muted hover:text-ink"
               }`}
             >
               {item.label}
@@ -64,7 +64,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <Button href="/contact" variant="brass">
+          <Button href="/contact" variant="accent">
             Book a demo
           </Button>
         </div>
@@ -76,10 +76,10 @@ export default function Header() {
           aria-expanded={open}
         >
           <span
-            className={`h-px w-6 bg-cream transition-transform ${open ? "translate-y-[3px] rotate-45" : ""}`}
+            className={`h-px w-6 bg-ink transition-transform ${open ? "translate-y-[3px] rotate-45" : ""}`}
           />
           <span
-            className={`h-px w-6 bg-cream transition-transform ${open ? "-translate-y-[3px] -rotate-45" : ""}`}
+            className={`h-px w-6 bg-ink transition-transform ${open ? "-translate-y-[3px] -rotate-45" : ""}`}
           />
         </button>
       </div>
@@ -87,19 +87,19 @@ export default function Header() {
       {open && (
         <div
           ref={menuRef}
-          className="overflow-hidden border-t border-line-on-canvas md:hidden"
+          className="overflow-hidden border-t border-line-on-paper md:hidden"
         >
           <div className="flex flex-col gap-1 px-6 py-4">
             {NAV.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="py-2.5 text-base text-cream-muted"
+                className="py-2.5 text-base text-ink-muted"
               >
                 {item.label}
               </Link>
             ))}
-            <Button href="/contact" variant="brass" className="mt-3 w-full">
+            <Button href="/contact" variant="accent" className="mt-3 w-full">
               Book a demo
             </Button>
           </div>
