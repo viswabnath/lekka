@@ -2,10 +2,8 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 import ScreenshotFrame from "@/components/ScreenshotFrame";
-import FinanceMockup from "@/components/mockups/FinanceMockup";
+import ScreenshotImage from "@/components/ScreenshotImage";
 import PayrollMockup from "@/components/mockups/PayrollMockup";
-import TimesheetMockup from "@/components/mockups/TimesheetMockup";
-import ClientsMockup from "@/components/mockups/ClientsMockup";
 import { IconCheck, IconArrowRight } from "@/components/icons";
 
 export const metadata = {
@@ -25,8 +23,8 @@ const SECTIONS = [
       "Live balance across every payment method — cash and every bank account",
       "Reports by financial year, quarter, or custom range",
     ],
-    mockup: <FinanceMockup />,
-    label: "lekka.app/finance",
+    screenshot: "/screenshots/finance.jpg",
+    screenshotAlt: "Client statement showing billed, paid, and outstanding totals in Lekka",
   },
   {
     code: "HR",
@@ -53,8 +51,8 @@ const SECTIONS = [
       "Missed-day reminders, automatically",
       "Feeds straight into payroll — no re-entry",
     ],
-    mockup: <TimesheetMockup />,
-    label: "lekka.app/timesheet",
+    screenshot: "/screenshots/timesheet.jpg",
+    screenshotAlt: "Attendance dashboard showing monthly heatmap and yearly productivity trend",
   },
   {
     code: "CRM",
@@ -67,8 +65,8 @@ const SECTIONS = [
       "Services and sectors tagged for real reporting",
       "Nothing gets lost when someone's on leave",
     ],
-    mockup: <ClientsMockup />,
-    label: "lekka.app/clients",
+    screenshot: "/screenshots/clients.jpg",
+    screenshotAlt: "Client and service master list showing sector, contact info, and status",
   },
 ];
 
@@ -108,7 +106,11 @@ export default function ProductPage() {
                 </div>
               </Reveal>
               <Reveal delay={0.1} className={i % 2 === 1 ? "lg:order-1" : ""}>
-                <ScreenshotFrame label={s.label}>{s.mockup}</ScreenshotFrame>
+                {s.screenshot ? (
+                  <ScreenshotImage src={s.screenshot} alt={s.screenshotAlt} />
+                ) : (
+                  <ScreenshotFrame label={s.label}>{s.mockup}</ScreenshotFrame>
+                )}
               </Reveal>
             </div>
           </div>

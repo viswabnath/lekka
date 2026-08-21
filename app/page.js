@@ -2,9 +2,7 @@ import Link from "next/link";
 import Button from "@/components/Button";
 import Reveal from "@/components/Reveal";
 import LedgerRow from "@/components/LedgerRow";
-import ScreenshotFrame from "@/components/ScreenshotFrame";
-import FinanceMockup from "@/components/mockups/FinanceMockup";
-import PayrollMockup from "@/components/mockups/PayrollMockup";
+import ScreenshotImage from "@/components/ScreenshotImage";
 import {
   IconPeople,
   IconInvoice,
@@ -153,32 +151,28 @@ export default function Home() {
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <ScreenshotFrame label="lekka.app/finance">
-                <FinanceMockup />
-              </ScreenshotFrame>
+              <ScreenshotImage src="/screenshots/finance.jpg" alt="Client statement showing billed, paid, and outstanding totals in Lekka" />
             </Reveal>
           </div>
 
           <div className="mt-24 grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
             <Reveal className="order-2 lg:order-1">
-              <ScreenshotFrame label="lekka.app/payroll">
-                <PayrollMockup />
-              </ScreenshotFrame>
+              <ScreenshotImage src="/screenshots/timesheet.jpg" alt="Timesheet dashboard showing monthly attendance heatmap and productivity trend" />
             </Reveal>
             <Reveal delay={0.1} className="order-1 lg:order-2">
               <div>
                 <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-oxblood">
-                  Payroll without the spreadsheet
+                  Attendance, without the spreadsheet
                 </div>
                 <h2 className="font-display mt-4 text-3xl font-medium leading-tight text-ink sm:text-4xl">
-                  Payslips your team
+                  See who logged what,
                   <br />
-                  can find themselves.
+                  without asking.
                 </h2>
                 <p className="mt-5 max-w-md text-ink-muted">
-                  Generated straight from attendance and leave records, and
-                  every employee can pull up their own history — no more
-                  &ldquo;can you resend my payslip&rdquo; messages.
+                  A month at a glance, a year of trend — built straight from
+                  daily entries, so payroll and approvals never start with
+                  &ldquo;let me check.&rdquo;
                 </p>
               </div>
             </Reveal>
