@@ -15,7 +15,7 @@ export async function POST(request) {
     // 1. Resend API Email Delivery
     const resendApiKey = process.env.RESEND_API_KEY;
     if (resendApiKey) {
-      const recipientEmail = process.env.CONTACT_NOTIFICATION_EMAIL || "hello@onemark.co.in";
+      const recipientEmail = process.env.CONTACT_NOTIFICATION_EMAIL || "viswa.visu57@gmail.com";
       const fromEmail = process.env.RESEND_FROM_EMAIL || "Lekka Demo <onboarding@resend.dev>";
 
       const resendRes = await fetch("https://api.resend.com/emails", {
