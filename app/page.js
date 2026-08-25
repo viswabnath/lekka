@@ -133,33 +133,32 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden bg-paper">
+      <section className="relative isolate overflow-hidden bg-gradient-to-b from-paper-2/60 via-paper to-paper">
         <BackgroundDoodle />
         <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-16 lg:px-10 lg:pb-28 lg:pt-24">
-          <div className="grid items-center gap-16 lg:grid-cols-[1fr_1.1fr] lg:gap-10">
+          <div className="grid items-center gap-16 lg:grid-cols-[1fr_1.1fr] lg:gap-12">
             <Reveal direction="left">
-              <span className="font-mono-figures inline-block rounded-sm border border-line-on-paper px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-accent-bright">
-                Now taking early customers
-              </span>
-              <h1 className="font-display mt-6 text-5xl font-medium leading-[1.05] text-ink sm:text-6xl">
+              <div className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/5 px-3.5 py-1.5 text-xs font-semibold text-accent shadow-sm">
+                <span className="h-2 w-2 rounded-full bg-accent animate-ping" />
+                <span className="font-mono-figures uppercase tracking-widest text-[10px]">
+                  Now Onboarding Select Teams
+                </span>
+              </div>
+              <h1 className="font-display mt-6 text-5xl font-extrabold tracking-tight text-ink sm:text-6xl lg:text-7xl leading-[1.05]">
                 One ledger for
                 <br />
-                your <span className="text-accent">whole</span> business.
+                your <span className="bg-gradient-to-r from-accent to-accent-bright bg-clip-text text-transparent">whole</span> business.
               </h1>
-              <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink-muted">
-                Most businesses don&rsquo;t fail from one bad decision — they
-                drift, quietly, because nobody&rsquo;s watching all the
-                numbers at once. Lekka brings your payroll, invoices,
-                timesheets, and clients into one place, so nothing about
-                your business happens without you knowing.
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted">
+                Most businesses don&rsquo;t fail from one catastrophic error — they drift quietly when financial, time, and client metrics live in silos. Lekka unifies your payroll, invoices, attendance, and client intelligence into one real-time command platform.
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-4">
-                <Button href="/contact" variant="accent">
+                <Button href="/contact" variant="accent" className="shadow-lg">
                   Book a demo
                   <IconArrowRight />
                 </Button>
                 <Button href="/product" variant="outlineLight">
-                  See what&rsquo;s inside
+                  Explore Platform
                 </Button>
               </div>
             </Reveal>
@@ -202,41 +201,43 @@ export default function Home() {
       </section>
 
       {/* What "ignoring it" actually costs */}
-      <section className="bg-paper">
+      <section className="bg-paper border-y border-line-on-paper/60">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
           <Reveal direction="up">
-            <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-danger">
-              This is what &ldquo;we&rsquo;ll sort it out later&rdquo; usually looks like
+            <div className="inline-flex items-center gap-2 rounded-md bg-danger/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-danger">
+              <span>The Cost of Fragmented Tools</span>
             </div>
             <div className="mt-8 grid gap-8 sm:grid-cols-3">
               {[
                 {
-                  title: "A client who was never actually billed",
-                  body: "The work got done, the invoice didn't get sent, and nobody noticed until the money should already have landed.",
+                  title: "Unbilled Client Work",
+                  body: "Deliverables get shipped, but invoices lag in draft state or get forgotten — quietly bleeding revenue each month.",
                 },
                 {
-                  title: "An expense nobody remembers approving",
-                  body: "It's in the account statement. It's not in anyone's head. By the time someone asks, the answer is a shrug.",
+                  title: "Unapproved Expenses",
+                  body: "Transactions land on bank statements with zero context or approval trail — leading to audit confusion.",
                 },
                 {
-                  title: "A number in your head that isn't the number in your account",
-                  body: "You could tell someone your cash position right now. It would be a guess — and you'd be running the business on it anyway.",
+                  title: "Running on Financial Guesses",
+                  body: "Cash position is estimated rather than reconciled live — forcing key leadership choices on inaccurate projections.",
                 },
               ].map((v) => (
-                <div key={v.title}>
-                  <h2 className="font-display text-xl font-medium text-ink">
+                <div
+                  key={v.title}
+                  className="group rounded-xl border border-line-on-paper bg-paper-2 p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-danger/40 hover:shadow-md"
+                >
+                  <h3 className="font-display text-xl font-bold text-ink group-hover:text-danger transition-colors">
                     {v.title}
-                  </h2>
+                  </h3>
                   <p className="mt-3 text-sm leading-relaxed text-ink-muted">
                     {v.body}
                   </p>
                 </div>
               ))}
             </div>
-            <p className="font-display mt-14 max-w-2xl text-2xl leading-snug text-ink sm:text-3xl">
-              You don&rsquo;t need more software. You need one place where
-              nothing about your business can{" "}
-              <span className="text-danger">quietly hide</span>.
+            <p className="font-display mt-14 max-w-2xl text-2xl font-bold leading-snug text-ink sm:text-3xl">
+              You don&rsquo;t need another standalone app. You need one single source of truth where operational drift can{" "}
+              <span className="text-danger underline decoration-danger/30 underline-offset-4">never hide</span>.
             </p>
           </Reveal>
         </div>
@@ -356,34 +357,34 @@ export default function Home() {
       </section>
 
       {/* Real numbers */}
-      <section className="bg-paper-2">
+      <section className="bg-paper-2 border-t border-line-on-paper">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
           <Reveal>
-            <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-ink-subtle">
-              Not projections — what&rsquo;s actually running on it today
+            <div className="font-mono-figures text-xs uppercase tracking-[0.2em] font-semibold text-accent">
+              Proven Performance &middot; Real Operations Today
             </div>
-            <div className="ledger-rule mt-6 text-line-on-paper" />
-            <div className="mt-10 grid grid-cols-2 gap-8 sm:grid-cols-4">
+            <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4">
               {[
-                ["140+", "clients & leads tracked"],
-                ["700+", "expense records logged"],
-                ["250+", "income entries reconciled"],
-                ["12", "tools behind one login"],
+                ["140+", "Active Clients & Leads Tracked"],
+                ["700+", "Expense Records Auto-Logged"],
+                ["250+", "Income Entries Reconciled"],
+                ["12", "Core Tools Unified"],
               ].map(([big, small], i) => (
-                <div key={big}>
+                <div
+                  key={big}
+                  className="rounded-xl border border-line-on-paper bg-paper p-6 shadow-sm transition-all duration-300 hover:border-accent/40 hover:shadow-md"
+                >
                   <StatCounter
                     value={big}
                     delay={i * 0.1}
-                    className="font-mono-figures text-3xl font-medium text-ink sm:text-4xl"
+                    className="font-mono-figures text-4xl font-extrabold text-ink sm:text-5xl"
                   />
-                  <div className="mt-2 text-sm text-ink-muted">{small}</div>
+                  <div className="mt-2 text-xs font-medium leading-relaxed text-ink-muted">{small}</div>
                 </div>
               ))}
             </div>
-            <p className="mt-8 max-w-xl text-sm text-ink-muted">
-              These are OneMark&rsquo;s own numbers, from running our own
-              agency on Lekka every day — not a demo account, not a sales
-              projection.
+            <p className="mt-8 max-w-xl text-xs text-ink-subtle">
+              * Verification note: figures represent real live agency data from OneMark&rsquo;s internal operational portal — zero placeholder or simulated metrics.
             </p>
           </Reveal>
         </div>
@@ -462,24 +463,22 @@ export default function Home() {
       </section>
 
       {/* CTA band */}
-      <section className="bg-paper-2">
+      <section className="bg-paper-2 border-t border-line-on-paper">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
           <Reveal>
-            <div className="relative isolate overflow-hidden rounded-lg border border-accent/25 bg-paper px-8 py-16 text-center sm:px-16">
-              <BackgroundDoodle className="rounded-lg" />
-              <h2 className="relative font-display text-3xl font-medium text-ink sm:text-4xl">
-                The one system your business{" "}
-                <span className="text-danger">can&rsquo;t afford</span> to
-                keep putting off.
+            <div className="relative isolate overflow-hidden rounded-2xl border border-accent/20 bg-gradient-to-br from-paper via-paper-2 to-paper p-10 text-center shadow-xl sm:p-20">
+              <div className="pointer-events-none absolute -inset-10 rounded-full bg-accent/10 blur-3xl" />
+              <BackgroundDoodle className="rounded-2xl" />
+              <h2 className="relative font-display text-3xl font-extrabold text-ink sm:text-5xl tracking-tight leading-tight">
+                Stop operating in the dark.
+                <br />
+                <span className="bg-gradient-to-r from-accent to-accent-bright bg-clip-text text-transparent">Reclaim total visibility today.</span>
               </h2>
-              <p className="mx-auto mt-4 max-w-md text-ink-muted">
-                Every week you run on a pile of disconnected tools is a week
-                you&rsquo;re choosing to make this harder than it needs to
-                be. Let&rsquo;s set it up with your own data and show you
-                what you&rsquo;ve been missing.
+              <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-ink-muted">
+                Schedule an exclusive walkthrough configured specifically with your team&rsquo;s data architecture and operational workflow.
               </p>
-              <div className="mt-8 flex justify-center">
-                <Button href="/contact" variant="accent">
+              <div className="relative mt-9 flex justify-center">
+                <Button href="/contact" variant="accent" className="px-8 py-4 text-base shadow-xl">
                   Book a demo
                   <IconArrowRight />
                 </Button>

@@ -5,7 +5,7 @@ import Button from "./Button";
 import { IconArrowRight, IconCheck } from "./icons";
 
 const inputClass =
-  "w-full rounded-sm border border-line-on-paper bg-paper px-4 py-3 text-sm text-ink placeholder:text-ink-muted/70 outline-none transition-colors focus:border-danger";
+  "w-full rounded-sm border border-line-on-paper bg-paper px-4 py-3 text-sm text-ink placeholder:text-ink-muted/70 outline-none transition-colors focus:border-accent";
 
 export default function ContactForm() {
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error

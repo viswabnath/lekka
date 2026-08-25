@@ -84,32 +84,32 @@ export default function PricingPage() {
       <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
           <Reveal>
-            <div className="grid gap-6 lg:grid-cols-3">
+            <div className="grid gap-8 lg:grid-cols-3">
               {TIERS.map((tier) => (
                 <div
                   key={tier.name}
-                  className={`flex h-full flex-col rounded-lg border p-8 ${
+                  className={`relative flex h-full flex-col rounded-2xl border p-8 transition-all duration-300 ${
                     tier.featured
-                      ? "border-accent bg-paper-2 shadow-[0_20px_50px_-25px_rgba(94,106,210,0.35)]"
-                      : "border-line-on-paper bg-paper-2/60"
+                      ? "border-accent bg-paper-2 shadow-[0_20px_50px_-15px_rgba(99,102,241,0.25)] ring-2 ring-accent/20"
+                      : "border-line-on-paper bg-paper-2/80 hover:border-accent/40 shadow-sm"
                   }`}
                 >
                   {tier.featured && (
-                    <span className="font-mono-figures mb-4 inline-block w-fit rounded-sm bg-accent px-2.5 py-1 text-[10px] uppercase tracking-[0.14em] text-white">
-                      Most common
+                    <span className="font-mono-figures absolute -top-3 left-6 inline-block rounded-full bg-gradient-to-r from-accent to-accent-bright px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white shadow-md">
+                      Most Popular Deployment
                     </span>
                   )}
-                  <h2 className="font-display text-2xl font-medium text-ink">
+                  <h2 className="font-display text-2xl font-bold text-ink mt-2">
                     {tier.name}
                   </h2>
-                  <div className="font-mono-figures mt-2 text-sm text-accent-bright">
+                  <div className="font-mono-figures mt-2 text-sm font-semibold text-accent">
                     {tier.size}
                   </div>
-                  <p className="mt-4 text-sm text-ink-muted">{tier.description}</p>
+                  <p className="mt-4 text-sm leading-relaxed text-ink-muted">{tier.description}</p>
 
-                  <ul className="mt-7 flex-1 space-y-3">
+                  <ul className="mt-8 flex-1 space-y-3.5">
                     {tier.points.map((p) => (
-                      <li key={p} className="flex items-start gap-3 text-sm text-ink/90">
+                      <li key={p} className="flex items-start gap-3 text-sm text-ink">
                         <IconCheck className="mt-0.5 shrink-0 text-success" />
                         {p}
                       </li>

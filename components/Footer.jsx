@@ -40,19 +40,22 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
         <div className="grid gap-12 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
-            <span className="font-display text-2xl font-medium text-ink">
-              Lekka
-            </span>
+            <div className="flex items-center gap-2.5">
+              <span className="flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-accent to-accent-bright text-white font-display font-bold text-lg shadow-sm">
+                L
+              </span>
+              <span className="font-display text-2xl font-bold tracking-tight text-ink">
+                Lekka
+              </span>
+            </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-muted">
-              One place for payroll, invoices, timesheets, and clients —
-              built for businesses that are done juggling a dozen tools to
-              run one.
+              The unified ledger for payroll, invoices, timesheets, and client management — built for modern businesses that value clarity.
             </p>
             <a
               href="https://wa.me/918331978532"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 text-sm text-ink-muted transition-colors hover:text-success-deep"
+              className="mt-5 inline-flex items-center gap-2 rounded-full border border-success/30 bg-success/5 px-4 py-1.5 text-xs font-semibold text-success-deep transition-all hover:bg-success/15"
             >
               <IconWhatsApp className="h-4 w-4 shrink-0" />
               Chat on WhatsApp

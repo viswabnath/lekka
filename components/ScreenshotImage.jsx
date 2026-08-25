@@ -46,7 +46,15 @@ export default function ScreenshotImage({
       onMouseMove={handleMove}
       onMouseLeave={() => setLens(null)}
     >
-      <Image src={src} alt={alt} width={width} height={height} className="h-auto w-full" priority={priority} />
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 1200px"
+        className="h-auto w-full"
+        priority={priority}
+      />
 
       {lens && (
         <div

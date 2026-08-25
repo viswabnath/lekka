@@ -30,6 +30,13 @@ export default function Header() {
     document.body.style.overflow = "hidden";
     const links = menuRef.current.querySelectorAll(".mobile-nav-link");
 
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+
     const ctx = gsap.context(() => {
       gsap.fromTo(
         menuRef.current,
@@ -44,6 +51,7 @@ export default function Header() {
     }, menuRef);
 
     return () => {
+      window.removeEventListener("keydown", handleKeyDown);
       ctx.revert();
       document.body.style.overflow = "";
     };
@@ -51,31 +59,39 @@ export default function Header() {
 
   return (
     <>
-    <header className="sticky top-0 z-50 border-b border-line-on-paper bg-paper/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-        <Link href="/" className="flex items-baseline gap-2">
-          <span className="font-display text-2xl font-medium text-ink">
-            Lekka
+    <header className="sticky top-0 z-50 border-b border-line-on-paper/80 bg-paper-2/80 backdrop-blur-xl transition-colors">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3.5 lg:px-10">
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-accent to-accent-bright text-white font-display font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
+            L
           </span>
-          <span className="font-mono-figures text-[10px] uppercase tracking-[0.18em] text-ink-muted">
-            by OneMark
-          </span>
+          <div className="flex flex-col">
+            <span className="font-display text-xl font-bold tracking-tight text-ink">
+              Lekka
+            </span>
+            <span className="font-mono-figures text-[9px] uppercase tracking-[0.2em] text-ink-subtle -mt-1 font-semibold">
+              by OneMark
+            </span>
+          </div>
         </Link>
 
-        <nav className="hidden items-center gap-9 md:flex">
-          {NAV.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`text-sm transition-colors ${
-                pathname === item.href
-                  ? "text-accent-bright"
-                  : "text-ink-muted hover:text-ink"
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
+        <nav className="hidden items-center gap-1 rounded-full border border-line-on-paper/70 bg-paper-3/50 p-1.5 md:flex">
+          {NAV.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`relative rounded-full px-4 py-1.5 text-xs font-semibold transition-all duration-200 ${
+                  isActive
+                    ? "bg-paper-2 text-accent shadow-sm"
+                    : "text-ink-muted hover:text-ink"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden md:block">

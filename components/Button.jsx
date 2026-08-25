@@ -2,10 +2,10 @@ import Link from "next/link";
 
 const variants = {
   accent:
-    "bg-accent text-white hover:bg-accent-bright shadow-[0_1px_0_0_rgba(0,0,0,0.15)]",
+    "bg-gradient-to-r from-accent to-accent-bright text-white shadow-[0_4px_20px_-4px_rgba(99,102,241,0.5)] hover:shadow-[0_6px_24px_-2px_rgba(99,102,241,0.65)] hover:-translate-y-0.5 active:translate-y-0",
   outlineLight:
-    "border border-ink/25 text-ink hover:border-accent hover:text-accent",
-  textLight: "text-ink hover:text-accent",
+    "border border-line-on-paper bg-paper-2/80 text-ink shadow-sm hover:border-accent/50 hover:bg-paper hover:text-accent hover:-translate-y-0.5 active:translate-y-0",
+  textLight: "text-ink hover:text-accent font-medium",
 };
 
 export default function Button({
@@ -15,7 +15,7 @@ export default function Button({
   children,
   ...props
 }) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-sm px-6 py-3 text-sm font-medium tracking-wide transition-colors duration-200 ${variants[variant]} ${className}`;
+  const classes = `inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-200 cursor-pointer ${variants[variant]} ${className}`;
 
   if (href) {
     return (

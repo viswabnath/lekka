@@ -1,40 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  /* Canvas — OneMark's actual dark surface ladder (Linear-style) */
-  --canvas: #010102;
-  --canvas-2: #0f1011;
-  --canvas-3: #141516;
-  --canvas-4: #18191a;
+  /* Canvas — Obsidian dark surfaces */
+  --canvas: #090d16;
+  --canvas-2: #0f172a;
+  --canvas-3: #1e293b;
+  --canvas-4: #334155;
 
-  /* Paper — light surfaces, matching the product's light mode */
-  --paper: #f5f6f6;
+  /* Paper — Crisp, modern light surfaces */
+  --paper: #fafbfe;
   --paper-2: #ffffff;
-  --paper-3: #ececed;
+  --paper-3: #f1f4f9;
 
-  /* Ink — text on paper (light mode) */
-  --ink: #0d0e10;
-  --ink-muted: #4a4d54;
-  --ink-subtle: #6b6f77;
+  /* Ink — Rich typography hierarchy */
+  --ink: #0b0f19;
+  --ink-muted: #475569;
+  --ink-subtle: #64748b;
 
-  /* Text on canvas (dark mode) */
-  --cream: #f7f8f8;
-  --cream-muted: #d0d6e0;
+  /* Text on dark canvas */
+  --cream: #f8fafc;
+  --cream-muted: #cbd5e1;
 
-  /* Accents — OneMark's actual brand tokens */
-  --accent: #5e6ad2;
-  --accent-bright: #4a55be;
-  --danger: #dc2626;
-  --success: #27a644;
-  --success-deep: #1f8a38;
+  /* Accents — Electric Indigo & Vibrant Tones */
+  --accent: #6366f1;
+  --accent-bright: #4f46e5;
+  --accent-glow: rgba(99, 102, 241, 0.25);
+  --danger: #ef4444;
+  --success: #10b981;
+  --success-deep: #059669;
 
-  /* Rules */
-  --line-on-canvas: #23252a;
-  --line-on-paper: #e4e5e9;
+  /* Lines & Dividers */
+  --line-on-canvas: #1e293b;
+  --line-on-paper: #e2e8f0;
 
-  --font-display: var(--font-jakarta);
+  --font-display: var(--font-outfit);
   --font-body: var(--font-jakarta);
-  --font-mono: var(--font-plex-mono);
+  --font-mono: var(--font-mono-jb);
 }
 
 @theme inline {
@@ -61,10 +62,11 @@
   --font-body: var(--font-body);
   --font-mono: var(--font-mono);
 
-  /* OneMark's radius scale: sm=8px (buttons), md=12px (cards), lg=16px (panels) */
+  /* Radius scale */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
+  --radius-xl: 24px;
 }
 
 * {
@@ -189,6 +191,11 @@ html.has-custom-cursor .cursor-dot[data-mode="hide"] {
   html.has-custom-cursor select {
     cursor: auto;
   }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -130,8 +130,10 @@ export function IconFolder(props) {
 export function IconWhatsApp(props) {
   return (
     <svg viewBox="0 0 24 24" width="24" height="24" {...base} {...props}>
-      <path d="M6.5 17.5 4 20l2.6-2.4A8 8 0 1 1 6.5 17.5Z" />
-      <path d="M8.7 8.6c-.3 1 .1 2.2 1.1 3.5 1 1.3 2.1 2 3.2 2.3.9.2 1.3-.4 1.6-.9.2-.4 0-.6-.2-.8l-1.2-1c-.2-.2-.4-.2-.6 0l-.5.5c-.6-.3-1.4-1-1.8-1.8l.5-.5c.2-.2.2-.4 0-.6l-1-1.3c-.2-.2-.5-.3-.7-.1-.1 0-.3.2-.4.7Z" />
+      <path d="M12 21a8.9 8.9 0 0 1-4.5-1.2L3 21l1.2-4.5A8.9 8.9 0 1 1 12 21z" />
+      <path d="M9 10c.3 1.1 1.1 2.5 2.3 3.7 1.2 1.2 2.6 2 3.7 2.3" strokeLinecap="round" />
+      <path d="M8.5 9.5l.8-.8a1.2 1.2 0 0 1 1.7 0l.6.6a1.2 1.2 0 0 1 0 1.7l-.4.4" strokeLinecap="round" />
+      <path d="M12.6 13.6l.4-.4a1.2 1.2 0 0 1 1.7 0l.6.6a1.2 1.2 0 0 1 0 1.7l-.8.8" strokeLinecap="round" />
     </svg>
   );
 }
