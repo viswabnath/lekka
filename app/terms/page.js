@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 export const metadata = {
   title: "Terms of Service — Lekka",
   description: "The terms that govern using Lekka, by OneMark.",
+  alternates: { canonical: "/terms" },
 };
 
 const SECTIONS = [

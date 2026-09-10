@@ -7,6 +7,7 @@ import { IconCheck, IconArrowRight } from "@/components/icons";
 export const metadata = {
   title: "Pricing — Lekka",
   description: "Every Lekka deployment is your own — no shared database, no per-seat surprises.",
+  alternates: { canonical: "/pricing" },
 };
 
 const TIERS = [
@@ -72,9 +73,26 @@ const FAQS = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: f.a,
+    },
+  })),
+};
+
 export default function PricingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <PageHero
         eyebrow="Pricing"
         title={<>Your own deployment. Your own data. <span className="text-accent">No exceptions.</span></>}

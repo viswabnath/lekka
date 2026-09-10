@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 export const metadata = {
   title: "Privacy Policy — Lekka",
   description: "How OneMark handles data inside Lekka.",
+  alternates: { canonical: "/privacy" },
 };
 
 const SECTIONS = [

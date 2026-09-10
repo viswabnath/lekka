@@ -6,6 +6,7 @@ import { IconWhatsApp } from "@/components/icons";
 export const metadata = {
   title: "Contact — Lekka",
   description: "Book a demo of Lekka, set up with your own data.",
+  alternates: { canonical: "/contact" },
 };
 
 const STEPS = [

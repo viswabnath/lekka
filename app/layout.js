@@ -24,6 +24,10 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "600"],
 });
 
+const IS_PRODUCTION = process.env.VERCEL_ENV
+  ? process.env.VERCEL_ENV === "production"
+  : process.env.NODE_ENV === "production";
+
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -32,6 +36,15 @@ export const metadata = {
   },
   description:
     "Lekka brings your payroll, invoices, timesheets, and clients into one place — built by OneMark in Kakinada, India, for businesses everywhere.",
+  alternates: {
+    canonical: "/",
+  },
+  authors: [{ name: "OneMark", url: SITE_URL }],
+  creator: "OneMark",
+  publisher: "OneMark",
+  robots: IS_PRODUCTION
+    ? { index: true, follow: true }
+    : { index: false, follow: false },
   openGraph: {
     type: "website",
     siteName: "Lekka",

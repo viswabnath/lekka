@@ -113,7 +113,7 @@ Content and copy conventions (see also `CLAUDE.md`):
    number before launch. The number is deliberately not printed as
    visible text anywhere, only used as the link target.
 4. **`NEXT_PUBLIC_SITE_URL`** — `lib/site.js` falls back to
-   `https://lekka.onemark.co.in` if this env var isn't set. The OG/Twitter
+   `https://lekka.onemark.digital` if this env var isn't set. The OG/Twitter
    share images, `sitemap.xml`, and `robots.txt` all resolve absolute
    URLs from it — set it to the real production domain once confirmed.
 5. **No public price list** — intentional (talk-to-us model, matching the

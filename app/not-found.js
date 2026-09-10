@@ -6,6 +6,7 @@ import { IconArrowRight, IconChart } from "@/components/icons";
 export const metadata = {
   title: "Page not found — Lekka",
   description: "This entry doesn't exist in the ledger.",
+  robots: { index: false },
 };
 
 export default function NotFound() {

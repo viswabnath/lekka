@@ -7,6 +7,7 @@ import { IconAnchor, IconArrowRight } from "@/components/icons";
 export const metadata = {
   title: "About — OneMark",
   description: "Lekka is built by OneMark, based in Kakinada, Andhra Pradesh.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

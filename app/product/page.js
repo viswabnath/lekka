@@ -7,6 +7,7 @@ import { IconCheck, IconArrowRight } from "@/components/icons";
 export const metadata = {
   title: "Product — Lekka",
   description: "Everything Lekka does, module by module.",
+  alternates: { canonical: "/product" },
 };
 
 const SECTIONS = [

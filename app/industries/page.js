@@ -12,6 +12,7 @@ import {
 export const metadata = {
   title: "Who it's for — Lekka",
   description: "Industries and business types Lekka is built for.",
+  alternates: { canonical: "/industries" },
 };
 
 const FITS = [
