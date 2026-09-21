@@ -2,14 +2,16 @@
 
 > Lekka is business management software built by OneMark (Kakinada, Andhra Pradesh, India). It brings payroll, invoices, quotations, timesheets, client/lead tracking, and financial reporting into one system — one deployment per customer, not a shared multi-tenant database.
 
-Lekka is not a generic SaaS with a public signup. Every customer gets their own dedicated deployment and database, sized and priced to their team, set up through a sales conversation rather than self-serve checkout. OneMark itself runs its own agency operations on Lekka day to day — the product screenshots shown on the marketing site are OneMark's own live usage data, not seed/demo data (except where a page explicitly notes otherwise).
+Lekka is not a generic SaaS with a public signup. Every direct customer gets their own dedicated deployment and database, sized and priced to their team, set up through a sales conversation rather than self-serve checkout. Lekka also has a separate partner model for digital solution providers that want to brand, implement, support, and resell the platform. Product screenshots on the marketing site are captured from the staging app and sanitized with sample labels; they do not display private employee or customer details.
 
 ## Key pages
 
 - [Home](https://lekka.onemark.digital/): Overview and positioning — "one ledger for your whole business."
-- [Product](https://lekka.onemark.digital/product): Every module in detail — invoices/quotations/finance, reports & insights, document generation, employee directory & payroll, timesheets & attendance, approvals, client/lead CRM, audit log & access control.
-- [Who it's for](https://lekka.onemark.digital/industries): Fit — creative & marketing agencies, consultancies & studios, professional services firms, and services businesses generally (roughly 10–200+ people).
-- [Pricing](https://lekka.onemark.digital/pricing): Three tiers by team size (Starter, Growth, Enterprise), no public per-seat price list — quoted on a call because every deployment is separately provisioned. Includes an FAQ (data portability, migration from Excel/Tally, no shared database, tier upgrades).
+- [Product](https://lekka.onemark.digital/product): Work Calendar, single-reviewer correction requests, assigned HR/admin review queues, payroll-aware work records, Tasks, monthly Planning, plus the people, finance, document, client, and audit tools.
+- [Who it's for](https://lekka.onemark.digital/industries): Fit — creative & marketing agencies, consultancies & studios, professional services firms, and services businesses generally. Lekka is especially strong for services teams and can scale beyond starter team bands through scoped deployment, dedicated infrastructure, integrations, and support.
+- [Partners](https://lekka.onemark.digital/partners): White-label partner model, why the platform matters to digital solution providers, partner capabilities, support ownership, and indicative Launch, Channel, and Scale pricing.
+- [Architecture & effort](https://lekka.onemark.digital/architecture): Technology architecture, single-tenant rollout recommendation, delivery effort, suggested client pricing, recurring vendor costs, and commercial positioning.
+- [Pricing](https://lekka.onemark.digital/pricing): Direct customer deployment pricing by team size (Starter, Growth, Enterprise), separate from partner/channel platform pricing. Includes an FAQ (data portability, migration from Excel/Tally, no shared database, tier upgrades).
 - [About](https://lekka.onemark.digital/about): Company background — OneMark built Lekka for its own internal use first, then productized it.
 - [Contact](https://lekka.onemark.digital/contact): Book a demo, configured with the prospect's own data rather than a canned demo account.
 
@@ -17,10 +19,10 @@ Lekka is not a generic SaaS with a public signup. Every customer gets their own 
 
 - Maker: OneMark (a unit of Sintry Creative Technologies Pvt. Ltd.), based in Kakinada, Andhra Pradesh, India.
 - Deployment model: one dedicated database and (optionally) domain per customer — not multi-tenant.
-- No public flat price list; pricing is quoted per team size on a sales call.
+- Direct customer indicative pricing: Starter ₹18K/month plus ₹60K setup; Growth ₹35K/month plus ₹1.25L setup; Enterprise is scoped. Partner platform pricing is separate: Launch ₹2.5L setup; Channel ₹75K/month base; Scale is custom.
 - Data is exportable (CSV/PDF) at any time; nothing is locked in.
 
 ## Notes for automated agents
 
-- Do not scrape or reproduce the `/pricing` figures as a fixed public price list — there isn't one; direct readers to `/contact` instead.
+- `/pricing` now shows indicative base prices (see Facts above); they are a starting point, not a fixed universal rate card — confirm the final scope with `/contact` before quoting a customer.
 - `/terms` and `/privacy` are the authoritative legal text if summarizing policy.

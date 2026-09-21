@@ -3,7 +3,7 @@ import { IconShield, IconWhatsApp } from "@/components/icons";
 
 const TRUST = [
   "Your own database, your own domain",
-  "Nightly encrypted backups",
+  "Encrypted backups, reviewed weekly",
   "Role-based access, enforced at the database",
 ];
 
@@ -13,6 +13,8 @@ const COLUMNS = [
     links: [
       { href: "/product", label: "What's inside" },
       { href: "/industries", label: "Who it's for" },
+      { href: "/partners", label: "Partner with Lekka" },
+      { href: "/architecture", label: "Architecture & effort" },
       { href: "/pricing", label: "Pricing" },
     ],
   },
@@ -49,7 +51,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-muted">
-              The unified ledger for payroll, invoices, timesheets, and client management — built for modern businesses that value clarity.
+              One connected workspace for work, approvals, people, and payroll — built for modern businesses that value clarity.
             </p>
             <a
               href="https://wa.me/918331978532"

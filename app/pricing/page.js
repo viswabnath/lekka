@@ -6,7 +6,7 @@ import { IconCheck, IconArrowRight } from "@/components/icons";
 
 export const metadata = {
   title: "Pricing — Lekka",
-  description: "Every Lekka deployment is your own — no shared database, no per-seat surprises.",
+  description: "Transparent deployment and partner pricing for Lekka — your own data, your own domain, and a clear operating model.",
   alternates: { canonical: "/pricing" },
 };
 
@@ -14,18 +14,24 @@ const TIERS = [
   {
     name: "Starter",
     size: "Up to 15 people",
+    price: "₹18K",
+    cadence: "per month",
+    setup: "₹60K setup",
     description: "For a small team ready to leave spreadsheets behind.",
     points: [
       "HR, payroll & timesheets",
       "Invoices, quotations & finance module",
       "Client & lead tracking",
-      "Nightly encrypted backups",
+      "Encrypted backups, reviewed weekly",
       "Email support",
     ],
   },
   {
     name: "Growth",
     size: "Up to 60 people",
+    price: "₹35K",
+    cadence: "per month",
+    setup: "₹1.25L setup",
     description: "For an established agency or consultancy running full operations.",
     featured: true,
     points: [
@@ -39,6 +45,9 @@ const TIERS = [
   {
     name: "Enterprise",
     size: "60+ people, or custom needs",
+    price: "Custom",
+    cadence: "scoped monthly",
+    setup: "implementation scoped",
     description: "For businesses that need it built around a specific requirement.",
     points: [
       "Everything in Growth",
@@ -52,8 +61,8 @@ const TIERS = [
 
 const FAQS = [
   {
-    q: "Why isn't there a public price list?",
-    a: "Because every deployment is sized to your team and configured around how you actually work — there's no per-seat meter to quote you against. Tell us your team size and what you're replacing, and we'll quote it straight, on the call.",
+    q: "Are these final prices?",
+    a: "These are indicative base prices for a standard deployment. The final quote depends on your team size, data migration, integrations, support level, and any custom workflows. We confirm the full scope before you decide.",
   },
   {
     q: "Can I move from Excel, Tally, or another tool?",
@@ -96,7 +105,7 @@ export default function PricingPage() {
       <PageHero
         eyebrow="Pricing"
         title={<>Your own deployment. Your own data. <span className="text-accent">No exceptions.</span></>}
-        subtitle="Lekka isn't a shared database with your data sitting next to a competitor's. Every customer gets their own deployment — so pricing is based on your team's size, not a per-seat meter."
+        subtitle="Direct customer deployment pricing: Lekka isn't a shared database with your data sitting next to a competitor's. Every customer gets their own deployment — so pricing is based on your team's size, not a per-seat meter. Partner and reseller platform pricing is shown separately."
       />
 
       <section className="bg-paper">
@@ -123,6 +132,11 @@ export default function PricingPage() {
                   <div className="font-mono-figures mt-2 text-sm font-semibold text-accent">
                     {tier.size}
                   </div>
+                  <div className="mt-5 flex items-baseline gap-2">
+                    <span className="font-display text-3xl font-bold text-ink">{tier.price}</span>
+                    <span className="text-xs text-ink-subtle">{tier.cadence}</span>
+                  </div>
+                  <div className="mt-1 text-xs text-ink-subtle">{tier.setup}</div>
                   <p className="mt-4 text-sm leading-relaxed text-ink-muted">{tier.description}</p>
 
                   <ul className="mt-8 flex-1 space-y-3.5">
@@ -214,7 +228,7 @@ export default function PricingPage() {
           <Reveal>
             <div className="rounded-lg border border-accent/25 bg-paper px-8 py-16 sm:px-16">
               <h2 className="font-display text-3xl font-medium text-ink sm:text-4xl">
-                Tell us your team size — we&rsquo;ll quote it on the call.
+                Ready to move forward? Let&rsquo;s scope your deployment.
               </h2>
               <div className="mt-8 flex justify-center">
                 <Button href="/contact" variant="accent">

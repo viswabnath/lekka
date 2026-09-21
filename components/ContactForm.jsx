@@ -67,27 +67,29 @@ export default function ContactForm() {
         </div>
         <div>
           <label className="mb-1.5 block text-xs text-ink-muted" htmlFor="teamSize">
-            Team size
+            Team size, or inquiry type
           </label>
           <select id="teamSize" name="teamSize" required className={inputClass}>
             <option value="">Select one</option>
             <option>1 – 15</option>
             <option>16 – 60</option>
             <option>60+</option>
+            <option>100+</option>
+            <option>I&rsquo;m a partner — multiple client deployments</option>
           </select>
         </div>
       </div>
 
       <div>
         <label className="mb-1.5 block text-xs text-ink-muted" htmlFor="message">
-          What are you hoping to replace?
+          What are you hoping to replace, or what would you like to offer your clients?
         </label>
         <textarea
           id="message"
           name="message"
           rows={4}
           className={inputClass}
-          placeholder="e.g. spreadsheets for timesheets, a separate payroll tool, WhatsApp for client follow-ups…"
+          placeholder="e.g. spreadsheets for timesheets, a separate payroll tool, WhatsApp for client follow-ups… or, if you're a partner, who you'd deploy Lekka for"
         />
       </div>
 

@@ -40,34 +40,31 @@ export default function AboutPage() {
             </p>
             <p className="mt-6 text-lg leading-relaxed text-ink-muted">
               Lekka is that system, made available to other businesses.
-              Built in India, for businesses anywhere that run on the same
-              simple loop we do: quote the work, deliver it, invoice it,
-              get paid, pay your team.
+              Built in India, for businesses anywhere that need to plan work,
+              deliver it, review it, invoice it, get paid, and pay their team
+              without stitching the story together across separate tools.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* This is literally our own dashboard */}
+      {/* Product preview */}
       <section className="bg-paper-2">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
           <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
             <Reveal direction="right">
-              <ScreenshotImage src="/screenshots/dashboard.jpg" alt="OneMark's own live Lekka dashboard" />
+              <ScreenshotImage src="/screenshots/work-calendar.png" alt="Sanitized Work Calendar product preview with sample labels" />
             </Reveal>
             <Reveal direction="left">
               <div>
                 <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-accent-bright">
-                  Not a demo account
+                  Built from daily operations
                 </div>
                 <h2 className="font-display mt-4 text-3xl font-medium leading-tight text-ink sm:text-4xl">
-                  This is the dashboard we actually look at.
+                  Lekka grew from the workflow we needed ourselves.
                 </h2>
                 <p className="mt-5 max-w-md text-ink-muted">
-                  140+ clients and leads, 700+ expense records, 250+ income
-                  entries reconciled — that&rsquo;s our own agency&rsquo;s
-                  data, not a seed script written to look impressive for a
-                  screenshot.
+                  OneMark built Lekka to bring people, work records, approvals, payroll, and finance into one connected place. The product preview shown here uses sample labels to protect private staging data.
                 </p>
               </div>
             </Reveal>

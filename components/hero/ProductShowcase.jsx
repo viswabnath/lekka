@@ -41,29 +41,29 @@ export default function ProductShowcase() {
 
       <div ref={backRef} className="absolute -bottom-6 -left-6 w-[78%] sm:-bottom-10 sm:-left-10 z-10">
         <ScreenshotImage
-          src="/screenshots/finance.jpg"
-          alt="Client statement in Lekka showing billed, paid, and outstanding totals"
+          src="/screenshots/work-calendar.png"
+          alt="Sanitized Work Calendar screen with a month of daily work records"
           shadowClassName="shadow-[0_30px_70px_-20px_rgba(99,102,241,0.3)]"
           priority
         />
         {/* Floating badge 1 */}
         <div className="hidden sm:flex absolute -top-4 -left-4 z-30 items-center gap-2 rounded-full border border-line-on-paper bg-paper-2/95 px-3.5 py-1.5 shadow-lg backdrop-blur-md">
           <span className="h-2 w-2 rounded-full bg-success animate-pulse" />
-          <span className="font-mono-figures text-xs font-semibold text-ink">Live Balance Reconciled</span>
+          <span className="font-mono-figures text-xs font-semibold text-ink">Work records in one view</span>
         </div>
       </div>
 
       <div ref={frontRef} className="relative ml-[18%] sm:ml-[22%] z-20">
         <ScreenshotImage
-          src="/screenshots/dashboard.jpg"
-          alt="Lekka dashboard showing live balance, tools, and the team activity feed"
+          src="/screenshots/tasks.png"
+          alt="Sanitized team task board with work moving through review"
           shadowClassName="shadow-[0_40px_90px_-25px_rgba(99,102,241,0.4)]"
           priority
         />
         {/* Floating badge 2 */}
         <div className="hidden sm:flex absolute -bottom-4 -right-4 z-30 items-center gap-2 rounded-full border border-line-on-paper bg-paper-2/95 px-4 py-1.5 shadow-xl backdrop-blur-md">
-          <span className="font-mono-figures text-xs font-bold text-accent-bright">GST Compliant</span>
-          <span className="text-xs text-ink-muted">&middot; Auto-Archived</span>
+          <span className="font-mono-figures text-xs font-bold text-accent-bright">Assigned reviews</span>
+          <span className="text-xs text-ink-muted">&middot; Payroll-aware</span>
         </div>
       </div>
     </div>

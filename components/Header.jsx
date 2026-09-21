@@ -9,6 +9,8 @@ import Button from "./Button";
 const NAV = [
   { href: "/product", label: "Product" },
   { href: "/industries", label: "Who it's for" },
+  { href: "/partners", label: "Partners" },
+  { href: "/architecture", label: "Architecture" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
 ];

@@ -2,128 +2,66 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 import ScreenshotImage from "@/components/ScreenshotImage";
-import { IconCheck, IconArrowRight } from "@/components/icons";
+import { IconArrowRight, IconCheck } from "@/components/icons";
 
 export const metadata = {
   title: "Product — Lekka",
-  description: "Everything Lekka does, module by module.",
+  description: "Explore Lekka's connected work calendar, review, planning, and payroll workflows.",
   alternates: { canonical: "/product" },
 };
 
-const SECTIONS = [
+const FEATURES = [
   {
-    code: "FIN",
-    eyebrow: "Invoices, quotations & finance",
-    title: "One number for your cash position — always current.",
-    body: "Every income, expense, and advance reconciled automatically against the right account and client. The number on the screen is the number in the bank.",
+    code: "Work Calendar",
+    title: "Know what was logged—and what still needs attention.",
+    body: "A shared month view separates logged work, holidays, weekends, and missing workdays. Employees can request a correction for one date or a range instead of sending a string of separate requests.",
     points: [
-      "GST-compliant and simple invoices from the same tool",
-      "Advance payments auto-linked to the invoice they belong to",
-      "Live balance across every payment method — cash and every bank account",
-      "Reports by financial year, quarter, or custom range",
+      "Log client or internal work by day",
+      "Select a working-day range for a single correction request",
+      "Keep request history beside the calendar",
     ],
-    screenshot: "/screenshots/finance.jpg",
-    screenshotAlt: "Client statement showing billed, paid, and outstanding totals in Lekka",
+    screenshot: "/screenshots/work-calendar.png",
+    alt: "Sanitized Work Calendar screen showing logged days, holidays, weekends, and the request area",
   },
   {
-    code: "RPT",
-    eyebrow: "Reports & insights",
-    title: "Know your top clients and biggest costs without building a spreadsheet.",
-    body: "Revenue by service, revenue by client, your five biggest expense categories — computed automatically from records you already have, not a report someone has to remember to build.",
+    code: "Tasks",
+    title: "Keep ownership, status, and review together.",
+    body: "A shared team board shows work moving from To Do through In Progress and Review to Completed. Discussion stays with the task, while reviewer decisions and changes have a history.",
     points: [
-      "Top clients and top services, ranked by revenue",
-      "Where the money actually goes, by expense category",
-      "Financial year, quarterly, and month-on-month breakdowns",
-      "Export to CSV or PDF for your accountant, in one click",
+      "Filter by person and switch between week and month",
+      "Require a reviewer before work is marked complete",
+      "Postpone, archive, restore, and follow recurring work",
     ],
-    screenshot: "/screenshots/reports.jpg",
-    screenshotAlt: "Financial reports showing income, expenses, top clients, and revenue breakdown by service and client",
+    screenshot: "/screenshots/tasks.png",
+    alt: "Sanitized Tasks board with work grouped by status and reviewer workflow",
   },
   {
-    code: "DOC",
-    eyebrow: "Invoices, quotations & receipts",
-    title: "Client-facing documents that look like you hired a design team.",
-    body: "A 9-slide branded proposal deck generated from your service catalog in seconds. GST-compliant invoices, sequential and never duplicated. Acknowledgment receipts for advances.",
+    code: "Planning",
+    title: "Look across the month without losing the weekly plan.",
+    body: "Planning presents the same tasks as a month of weekly lists. Move work to another week when priorities shift; task details and status remain shared with the board.",
     points: [
-      "Quotations as a polished, multi-slide branded deck",
-      "Tax and non-tax invoices from one tool",
-      "Per-client invoice numbering — never duplicated, never skipped",
-      "Every document saved and searchable in one archive",
+      "Navigate months independently from the task board",
+      "Postpone work by moving it to another week",
+      "Review planning and task progress in one connected system",
     ],
-    screenshot: "/screenshots/quotation.jpg",
-    screenshotAlt: "Nine-slide branded quotation deck with live preview in the quotation editor",
+    screenshot: "/screenshots/planning.png",
+    alt: "Sanitized Planning screen showing task cards arranged by week",
   },
-  {
-    code: "HR",
-    eyebrow: "People & payroll",
-    title: "One directory, not a folder of spreadsheets.",
-    body: "Every employee's role, department, and join date in one place — with payslips generated straight from real attendance and leave, not rebuilt by hand each month.",
-    points: [
-      "Live-synced employee directory, role and department at a glance",
-      "Payslips generated from real attendance and leave data",
-      "Every employee sees their own history — no admin bottleneck",
-      "PTO and holiday calendar, with approvals built in",
-      "A team feed that marks birthdays and work anniversaries automatically",
-    ],
-    screenshot: "/screenshots/employees.jpg",
-    screenshotAlt: "Employee directory showing active team members, roles, and departments",
-  },
-  {
-    code: "OPS",
-    eyebrow: "Timesheets & attendance",
-    title: "Know where the hours actually went.",
-    body: "Daily entries roll up into weekly and monthly views your team already understands — and missed entries get flagged before month-end becomes a scramble.",
-    points: [
-      "Daily entry, weekly and monthly rollups",
-      "Approval workflow for managers",
-      "Missed-day reminders, automatically",
-      "Feeds straight into payroll — no re-entry",
-    ],
-    screenshot: "/screenshots/timesheet.jpg",
-    screenshotAlt: "Attendance dashboard showing monthly heatmap and yearly productivity trend",
-  },
-  {
-    code: "APR",
-    eyebrow: "Approvals",
-    title: "One queue for every manager, not one inbox each.",
-    body: "Every pending timesheet in a single global queue — who submitted it, how many hours, how much PTO — with approve or reject one click away. A manager can't approve their own.",
-    points: [
-      "Global approval queue across the whole team",
-      "Pending, approved, and rejected — all in one view",
-      "Self-approval blocked at the database, not just hidden in the UI",
-      "Rejections require a real reason, not a blank click",
-    ],
-    screenshot: "/screenshots/timesheet-approval.jpg",
-    screenshotAlt: "Global timesheet approval queue showing pending, approved, and rejected submissions",
-  },
-  {
-    code: "CRM",
-    eyebrow: "Clients, leads & follow-ups",
-    title: "Nothing about a client lives in someone's inbox.",
-    body: "Every client, every lead, every follow-up — with the services and history attached, searchable by anyone on the team who's allowed to see it.",
-    points: [
-      "Clients and leads in one searchable directory",
-      "Follow-up tracking across WhatsApp, email, calls",
-      "Services and sectors tagged for real reporting",
-      "Nothing gets lost when someone's on leave",
-    ],
-    screenshot: "/screenshots/clients.jpg",
-    screenshotAlt: "Client and service master list showing sector, contact info, and status",
-  },
-  {
-    code: "SEC",
-    eyebrow: "Access, audit & backups",
-    title: "Every action, permanently on record.",
-    body: "Who logged in, what they changed, and when — an immutable ledger of portal activity, not a feature you have to remember to check.",
-    points: [
-      "Role-based access enforced at the database, not just the screen",
-      "Every login, edit, and approval logged permanently",
-      "Nightly encrypted, automatic backups",
-      "Nothing is ever silently overwritten",
-    ],
-    screenshot: "/screenshots/audit-log.jpg",
-    screenshotAlt: "Audit log showing a real-time immutable ledger of portal activity",
-  },
+];
+
+const INCLUDED = [
+  ["Finance & cash tracking", "Record income, expenses, transfers, advance payments, receivables, and balances across payment methods."],
+  ["Reports & insights", "Review business activity by financial year, quarter, month, client, service, and expense category."],
+  ["Invoices, quotations & receipts", "Create tax or non-tax invoices, client quotations, and receipts, then find saved documents in the archive."],
+  ["People & payslips", "Manage employee records and roles, publish payslips, and provide employees with their own payslip history."],
+  ["Timesheets, PTO & holidays", "Track attendance and leave separately, with HR review, holiday calendars, and leave balances."],
+  ["Approval workflows", "Review timesheets and work-calendar corrections in assigned queues, with self-approval blocked."],
+  ["Clients, services & follow-ups", "Keep client and service records connected to follow-up activity and day-to-day work."],
+  ["Inventory & asset handovers", "Track categories, assignments, returns, and offboarding exceptions with an append-only event history."],
+  ["Employment documents", "Draft, review, approve, and issue employment letters and terms with private access and immutable issued records."],
+  ["Analytics & audit", "Surface operational and financial signals while retaining a permanent record of sensitive changes."],
+  ["Access, audit & archive", "Use role-based permissions, retain an audit trail for sensitive activity, and search saved business documents."],
+  ["Dashboard & team workspace", "See important activity alongside announcements, notifications, shared tasks, and planning."],
 ];
 
 export default function ProductPage() {
@@ -131,37 +69,34 @@ export default function ProductPage() {
     <>
       <PageHero
         eyebrow="Product"
-        title={<>Everything your business runs on, <span className="text-accent">in one place.</span></>}
-        subtitle="Not a bundle of separate apps wearing one logo — one system, built so each part already knows about the others."
+        title={<>Work, review, and payroll—<span className="text-accent">connected.</span></>}
+        subtitle="Lekka brings daily work records, accountable approvals, team planning, and payroll into one system, so people can see what needs to happen next."
       />
 
-      {SECTIONS.map((s, i) => {
-        const textFirst = i % 2 === 0;
+      {FEATURES.map((feature, index) => {
+        const textFirst = index % 2 === 0;
         return (
-          <section key={s.code} className={textFirst ? "bg-paper" : "bg-paper-2"}>
+          <section key={feature.code} className={textFirst ? "bg-paper" : "bg-paper-2"}>
             <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
               <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
                 <Reveal direction={textFirst ? "left" : "right"} className={textFirst ? "" : "lg:order-2"}>
                   <div>
-                    <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-accent-bright">
-                      {s.code} · {s.eyebrow}
-                    </div>
-                    <h2 className="font-display mt-4 text-3xl font-medium leading-tight text-ink sm:text-4xl">
-                      {s.title}
-                    </h2>
-                    <p className="mt-5 max-w-md text-ink-muted">{s.body}</p>
+                    <div className="font-mono-figures text-xs text-accent-bright">{feature.code}</div>
+                    <h2 className="font-display mt-4 text-3xl font-medium leading-tight text-ink sm:text-4xl">{feature.title}</h2>
+                    <p className="mt-5 max-w-md text-ink-muted">{feature.body}</p>
                     <ul className="mt-7 space-y-3">
-                      {s.points.map((p) => (
-                        <li key={p} className="flex items-start gap-3 text-sm text-ink/90">
+                      {feature.points.map(point => (
+                        <li key={point} className="flex items-start gap-3 text-sm text-ink/90">
                           <IconCheck className="mt-0.5 shrink-0 text-success" />
-                          {p}
+                          {point}
                         </li>
                       ))}
                     </ul>
                   </div>
                 </Reveal>
                 <Reveal direction={textFirst ? "right" : "left"} className={textFirst ? "" : "lg:order-1"}>
-                  <ScreenshotImage src={s.screenshot} alt={s.screenshotAlt} />
+                  <ScreenshotImage src={feature.screenshot} alt={feature.alt} />
+                  <p className="mt-3 text-xs text-ink-subtle">Product preview · sample labels shown</p>
                 </Reveal>
               </div>
             </div>
@@ -169,40 +104,21 @@ export default function ProductPage() {
         );
       })}
 
-      {/* More, in one place */}
-      <section className="bg-paper-2">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
-          <Reveal>
-            <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-ink-subtle">
-              And there&rsquo;s more inside
-            </div>
-            <p className="mt-3 max-w-xl text-ink-muted">
-              A command-center dashboard, a self-serve payslip archive, and
-              every generated document saved and searchable — the parts of
-              running a business that don&rsquo;t need a whole section to
-              make the point.
-            </p>
-            <div className="mt-10 grid gap-6 sm:grid-cols-3">
+      <section className="bg-paper-2 border-y border-line-on-paper">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
+          <Reveal direction="down">
+            <h2 className="font-display max-w-2xl text-3xl font-medium leading-tight text-ink sm:text-4xl">A correction reaches the right person—and stays visible.</h2>
+            <p className="mt-4 max-w-2xl text-ink-muted">The requester selects one HR or admin reviewer. That person receives the notification, while assigned requests remain available in their queue. A person cannot approve their own request.</p>
+            <div className="mt-10 grid gap-8 border-t border-line-on-paper pt-6 sm:grid-cols-3">
               {[
-                {
-                  src: "/screenshots/dashboard.jpg",
-                  alt: "Lekka dashboard with live balance, tools, and team activity feed",
-                  label: "Dashboard — everything at a glance",
-                },
-                {
-                  src: "/screenshots/my-payslips.jpg",
-                  alt: "Employee self-service payslip download screen",
-                  label: "Self-serve payslip archive",
-                },
-                {
-                  src: "/screenshots/archive.jpg",
-                  alt: "Document archive listing saved quotations, invoices, and receipts",
-                  label: "Every document, saved and searchable",
-                },
-              ].map((item) => (
-                <div key={item.src}>
-                  <ScreenshotImage src={item.src} alt={item.alt} />
-                  <p className="mt-3 text-sm text-ink-muted">{item.label}</p>
+                ["Request", "Select a missed date or range and explain what happened."],
+                ["Review", "Only the selected reviewer is notified; decision history stays with the request."],
+                ["Finalize", "Pending corrections and stale work revisions are checked before payroll is published."],
+              ].map(([title, body], index) => (
+                <div key={title} className="max-w-sm">
+                  <div className="font-mono-figures text-xs text-accent-bright">{index + 1}</div>
+                  <h3 className="font-display mt-3 text-xl text-ink">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">{body}</p>
                 </div>
               ))}
             </div>
@@ -211,16 +127,29 @@ export default function ProductPage() {
       </section>
 
       <section className="bg-paper">
-        <div className="mx-auto max-w-7xl px-6 py-24 text-center lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
+          <Reveal direction="down">
+            <h2 className="font-display text-3xl font-medium text-ink sm:text-4xl">The connected tools around the workflow</h2>
+            <p className="mt-4 max-w-2xl text-ink-muted">Work Calendar and planning sit alongside the people, finance, and document tools a team already needs.</p>
+            <div className="mt-10 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
+              {INCLUDED.map(([title, body]) => (
+                <div key={title} className="border-t border-line-on-paper py-5">
+                  <h3 className="font-display text-lg text-ink">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">{body}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-paper-2">
+        <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-10 lg:py-28">
           <Reveal>
-            <div className="rounded-lg border border-accent/25 bg-paper-2 px-8 py-16 sm:px-16">
-              <h2 className="font-display text-3xl font-medium text-ink sm:text-4xl">
-                See it running with your own data.
-              </h2>
+            <div className="rounded-lg border border-accent/25 bg-paper px-8 py-16 sm:px-16">
+              <h2 className="font-display text-3xl font-medium text-ink sm:text-4xl">See how it fits your team&rsquo;s workflow.</h2>
               <div className="mt-8 flex justify-center">
-                <Button href="/contact" variant="accent">
-                  Book a demo <IconArrowRight />
-                </Button>
+                <Button href="/contact" variant="accent">Book a demo <IconArrowRight /></Button>
               </div>
             </div>
           </Reveal>

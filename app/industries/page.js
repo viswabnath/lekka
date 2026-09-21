@@ -44,7 +44,7 @@ export default function IndustriesPage() {
       <PageHero
         eyebrow="Who it's for"
         title={<>Built for businesses that <span className="text-accent">bill for their work</span> — not for shelves.</>}
-        subtitle="Lekka fits the shape of a project- and retainer-based services business. It's not accounting software, not an inventory system, and not built for a product company."
+        subtitle="Lekka fits the shape of a project- and retainer-based services business. It connects planning, daily work, approvals, people, payroll, documents, finance, and client operations in one system."
       />
 
       <section className="bg-paper">
@@ -89,20 +89,21 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* The actual loop */}
+      {/* The actual operating loop */}
       <section className="bg-paper-2">
         <div className="mx-auto max-w-4xl px-6 py-20 lg:px-10 lg:py-24">
           <Reveal direction="left">
             <div className="font-mono-figures text-xs uppercase tracking-[0.18em] text-ink-subtle">
-              The loop every one of these businesses runs on
+              The operating loop behind the business
             </div>
           </Reveal>
           <div className="mt-8 space-y-0">
             {[
-              ["01", "Quote", "A branded, multi-slide proposal in minutes, not an afternoon in a slide deck."],
-              ["02", "Deliver", "Timesheets and client records track the work as it happens — nothing reconstructed later."],
-              ["03", "Invoice", "GST-compliant, sequential, tied to the client record — never a duplicate number."],
-              ["04", "Collect", "Advances and payments reconciled automatically. Outstanding balances never a guess."],
+              ["01", "Plan", "Turn priorities into shared tasks, weekly plans, owners, due dates, and review steps."],
+              ["02", "Deliver", "Record daily work, client activity, timesheets, and progress while the work is happening."],
+              ["03", "Approve", "Keep corrections, timesheets, reviews, and decisions with the person responsible for them."],
+              ["04", "Invoice & collect", "Connect client records, invoices, advances, payments, and outstanding balances."],
+              ["05", "Learn & improve", "Use reports, analytics, and audit history to see what is working and where work is getting stuck."],
             ].map(([num, title, body], i) => (
               <Reveal key={num} direction={i % 2 === 0 ? "left" : "right"} delay={i * 0.04}>
                 <div className="flex items-start gap-6 border-b border-line-on-paper py-6 last:border-0">
@@ -127,12 +128,14 @@ export default function IndustriesPage() {
             </div>
             <p className="font-display mt-5 text-2xl leading-snug text-ink sm:text-3xl">
               If you sell physical stock, need multi-currency accounting, or
-              you&rsquo;re running a 500-person company — Lekka isn&rsquo;t
-              the right fit yet, and we&rsquo;d rather tell you now.
+              need a full statutory accounting or retail warehouse-management
+              suite — Lekka may not be the right fit on its own, and
+              we&rsquo;d rather tell you now.
             </p>
             <p className="mt-5 text-ink-muted">
-              It&rsquo;s built for teams roughly 5 to 100 people, billing
-              clients for work — that&rsquo;s where it fits best today.
+              It works especially well for services teams, and it can scale
+              beyond the starter team bands through a scoped deployment,
+              dedicated infrastructure, integrations, and support plan.
             </p>
           </Reveal>
         </div>
